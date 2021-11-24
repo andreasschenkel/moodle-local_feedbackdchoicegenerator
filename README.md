@@ -1,6 +1,9 @@
 # Report #
 
-TODO Describe the plugin shortly here.
+Plugin that helps to generate an xml-file to import into activity feedback to support first and second choise feedback.
+
+![image](https://user-images.githubusercontent.com/31856043/143243636-edea2c80-1397-485f-833e-fdb697e5dd8a.png)
+
 
 TODO Provide more detailed description here.
 
