@@ -1,0 +1,30 @@
+{{!
+    @template report_feedbackchoicegenerator/report
+}}
+
+<?php session_start(); ?>
+
+<h3>{{header3}}</h3>
+<div>{{summary}}</div><br>
+
+   <form action="index.php?id=1" method="post">
+    <p>{{courseidlabel}}: <input name='id' type='number' value='1' disabled></p>
+    <p>{{sizelabel}}: <input name='size' type='number' value='{{size}}' max='1000'></p>
+   
+<b>{{optionsheader}} (maxlength {{maxlength}})</b><br>
+
+{{#options}}
+    {{{optionlable}}}: <input name='{{{optionname}}}' value='{{{optionvalue}}}' maxlength='{{maxlength}}'><br>
+{{/options}}
+
+<input type='submit' value='Generiere XML'><br>
+
+</form><br>
+
+<a href='reset.php'>Session zurücksetzen</a><br><br>
+
+{{description}}<br>
+
+<textarea id="textarea" name="textarea" rows="50" cols="100">
+{{textareacontent}}
+</textarea>     
