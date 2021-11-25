@@ -48,14 +48,6 @@ class Manager
     }
 
     /**
-     * @return Files
-     */
-    public function files(): Files
-    {
-        return new Files();
-    }
-
-    /**
      * @return Security
      */
     public function security(): Security

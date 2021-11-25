@@ -25,7 +25,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = [
-
     'report/feedbackchoicegenerator:view' => [
         'captype' => 'read',
         'contextlevel' => CONTEXT_COURSE,

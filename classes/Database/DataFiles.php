@@ -97,7 +97,6 @@ class DataFiles
         return $this->getDatabase()->get_records_sql($this->prepareStatement($params), $params);
     }
 
-    
     public function getCourse($courseId)
     {
         return $this->getDatabase()->get_record('course', ['id' => $courseId], '*', MUST_EXIST);
