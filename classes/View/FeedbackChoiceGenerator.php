@@ -4,13 +4,9 @@ namespace report_feedbackchoicegenerator\View;
 
 use stdClass;
 use moodle_database;
-use context_course;
 
 use report_feedbackchoicegenerator\Helper;
-use report_feedbackchoicegenerator\Files\FileInfo;
 use report_feedbackchoicegenerator\Manager;
-use report_feedbackchoicegenerator\Misc;
-use report_feedbackchoicegenerator\HTML;
 
 /**
  * Class FeedbackChoiceGenerator
@@ -54,88 +50,12 @@ class FeedbackChoiceGenerator
         $this->page = new Page($page, $course, $courseId, $output);
     }
 
+    /**
+     * @return Page
+     */
     public function getPage(): Page
     {
         return $this->page;
-    }
-
-    /**
-     * if the page is opened with a POST request,
-     * this means the user has confirmed to delete a single orphaned file,
-     * then we are checking if the file belongs to the user and delete it
-     *
-     * @return void
-     * @throws coding_exception
-     * @throws moodle_exception
-     * @throws require_login_exception
-     */
-    public function deleteOrphanedFile(): void
-    {
-        // validate if the user is logged in and allowed to view the course
-        // this method throws an exception if the user is not allowed
-        $this->apiM->security()->userIsAllowedToViewTheCourse($this->courseId);
-
-        if (
-            $_SERVER['REQUEST_METHOD'] === 'POST' &&
-            FileInfo::isSufficientForConstruction($_POST)
-        ) {
-            $this->afterDeletion = $this->apiM->files()->deleteFileByUserInCourse(
-                $this->apiM->security(),
-                new FileInfo($_POST),
-                $this->user,
-                $this->courseId
-            );
-        }
-    }
-
-    public function listOrphansForSection($sectionInfo)
-    {
-        $courseContextId = context_course::instance($this->courseId)->id;
-
-        $viewOrphanedFiles = [];
-        $viewOrphanedFiles = $this->apiM->handler()->sectionSummaryHandler()->getViewOrphanedFiles(
-            $viewOrphanedFiles,
-            $courseContextId,
-            $sectionInfo,
-            $this->user,
-            $this->courseId,
-            '' // Intentionally left blank: In case of a section summary, there is no iconHtml information
-        );
-
-        $modInfo = $sectionInfo->modinfo;
-
-        foreach ($modInfo->instances as $instances) {
-            foreach ($instances as $instance) {
-                if ($sectionInfo->id === $instance->section) {
-                    if ($instance->deletioninprogress !== '1') {
-                        if ($this->apiM->handler()->hasHandlerFor($instance)) {
-                            $viewOrphanedFiles = $this->apiM->handler()->getHandlerFor($instance)
-                                ->bind($this->user, $this->courseId, $instance, $this->getPage())
-                                ->addOrphans($viewOrphanedFiles);
-                        }
-                    }
-                }
-            }
-        }
-
-        return $viewOrphanedFiles;
-    }
-
-    public function createOrphansList($sectionInfo, $usingTemplate): string
-    {
-        $viewOrphanedFiles = $this->listOrphansForSection($sectionInfo);
-
-        if (!empty($viewOrphanedFiles)) {
-            $translations = Misc::translate(['isallowedtodeleteallfiles', 'description'], 'report_feedbackchoicegenerator');
-            $translations['header'] = Misc::translate(['modName', 'content', 'filename', 'preview', 'tool', 'moduleContent', 'code'], 'report_feedbackchoicegenerator', 'header.');
-
-            return $this->getPage()->getOutput()->render_from_template(
-                $usingTemplate,
-                ['orphanedFiles' => $viewOrphanedFiles, 'translation' => $translations]
-            );
-        }
-
-        return "";
     }
 
     /**
@@ -152,11 +72,6 @@ class FeedbackChoiceGenerator
         // validate if the user is logged in and allowed to view the course
         // this method throws an exception if the user is not allowed
         $this->apiM->security()->userIsAllowedToViewTheCourse($this->courseId);
-
-        /* löschen  $allowedToViewDeleteAllFiles = $this->apiM->security()->allowedToViewDeleteAllFiles(
-            $this->courseId,
-            $this->user
-        );*/
 
         echo $this->getPage()->getOutput()->header();
 
@@ -203,16 +118,15 @@ class FeedbackChoiceGenerator
         echo $this->getPage()->getOutput()->footer();
     }
 
-
-
+    /**
+     * @param array $optionsArray   Array contains all options
+     * 
+     * @return string xml-code to add into textarea in htmlpage
+     */
     public function textareagenerator( $optionsArray ): string
     {
 
-        // only for testing and developing purpose some examle options
-        //$optionsArray = ["Auswahlmöglichkeit Option 1", "Auswahlmöglichkeit Option 2", "Auswahlmöglichkeit Option 3", "Auswahlmöglichkeit Option 4",  "Auswahlmöglichkeit Option 5"];
-        //////$optionsArray = $_SESSION['options'];
-
-        // define the itemnumber to start with (maybe later I will set it to 1 instead of 680)
+        // define the itemnumber to start with (maybe later I will set it to 1 instead of 367)
         $itemnumber = 367;
 
         // we need $itemnumberFirstChoice as reference for the second choice
@@ -226,6 +140,7 @@ class FeedbackChoiceGenerator
         // B. generate first choice
         $selectedoption = "alleOptionenNutzenFürErstwahl"; // bei der erstwahl ist keine auswahl vorhanden, also werden dann einfach alle genutzt
         $level = 1; // first selectionoverview with all options
+        // @todo $option has to be set -> use of pattern SOLID
         $textareacontent = $textareacontent . $helper->generateSelectionOverview(
             $level,
             ++$itemnumber,
@@ -233,7 +148,6 @@ class FeedbackChoiceGenerator
             $helper->generateOptionsList($optionsArray, $selectedoption),
             $option
        );
-
 
         // C. generate pagebreak to seperate first choice
         $textareacontent = $textareacontent . $helper->generatePagebreak(++$itemnumber);

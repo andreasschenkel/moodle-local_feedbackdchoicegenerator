@@ -41,9 +41,6 @@ $string['summary'] = 'Generating import-file for activity feedback';
 $string['courseidlabel'] = 'course id';
 $string['sizelabel'] = 'How many options';
 
-
 $string['optionsheader'] = 'Enter options';
 
 $string['description'] = 'Put the generated xml-Code in to a textfile with the extension .xml. First line of code musst be: <\?xml version=\"1.0\" encoding=\"UTF-8\" ?>';
-
-

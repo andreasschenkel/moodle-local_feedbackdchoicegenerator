@@ -23,7 +23,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'report_feedbackchoicegenerator';
-$plugin->release = '1.0.0';
+$plugin->release = '1.0.1';
 $plugin->version = 2021112401;
 $plugin->requires = 2020061500;
 $plugin->maturity = MATURITY_RC;
