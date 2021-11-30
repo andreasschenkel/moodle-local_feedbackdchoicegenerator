@@ -10,6 +10,8 @@ TODO Provide more detailed description here.
 ## Changelog ##
 
 
+## hint to evaluate the choices with calc-program ##
+=WENN(D2<>"";D2;WENN(E2<>"";E2;WENN(F2<>"";F2;WENN(G2<>"";G2;"2.Wahl ist leer"))))
 
 
 ## Installing via uploaded ZIP file ##
