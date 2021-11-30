@@ -11,6 +11,13 @@ class Page
     private $title;
     private $course;
 
+
+    /**
+     * @param moodle_page   $page
+     * @param               $course
+     * @param int           $courseId
+     * @param bootstrap_renderer $output
+     */
     public function __construct($page, $course, $courseId, $output)
     {
         $this->page = $page;
