@@ -2,14 +2,32 @@
 
 Plugin that helps to generate an xml-file to import into activity feedback to support first and second choise feedback.
 
-![image](https://user-images.githubusercontent.com/31856043/143243636-edea2c80-1397-485f-833e-fdb697e5dd8a.png)
+![image](https://user-images.githubusercontent.com/31856043/144513664-fed4377f-1517-44a4-a020-16094002a874.png)
 
 
 TODO Provide more detailed description here.
 
 ## Changelog ##
 
+[[v1.0.2]]
 
+02.12.2021
+
+- use dataurl to be able to download xml-file
+- max length of option configurable
+- set capability für role editingteacher instead of teacher
+- check, if user has capability to view report also by checking the capapility
+- do not prevent capability for student
+- added missing languagestring feedbackchoicegenerator:view
+
+
+[[v1.0.1]] beta
+
+[[v1.0.0]] initial
+
+
+## hint to evaluate the choices with calc-program ##
+=WENN(D2<>"";D2;WENN(E2<>"";E2;WENN(F2<>"";F2;WENN(G2<>"";G2;"2.Wahl ist leer"))))
 
 
 ## Installing via uploaded ZIP file ##

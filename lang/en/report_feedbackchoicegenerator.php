@@ -26,6 +26,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = '1./2. choise-generator for feedback';
 
+$string['feedbackchoicegenerator:view'] = 'see 1.2-choice feedback-generator';
+
 $string['isactive'] = 'Activate report';
 $string['configisactive'] = 'When activate the report can be started in the coursenavigation.';
 
@@ -44,3 +46,5 @@ $string['sizelabel'] = 'How many options';
 $string['optionsheader'] = 'Enter options';
 
 $string['description'] = 'Put the generated xml-Code in to a textfile with the extension .xml. First line of code musst be: <\?xml version=\"1.0\" encoding=\"UTF-8\" ?>';
+
+$string['buttonlabel'] = 'generate XML or update';

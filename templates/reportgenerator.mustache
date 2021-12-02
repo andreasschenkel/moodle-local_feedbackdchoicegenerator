@@ -7,24 +7,38 @@
 <h3>{{header3}}</h3>
 <div>{{summary}}</div><br>
 
-   <form action="index.php?id=1" method="post">
-    <p>{{courseidlabel}}: <input name='id' type='number' value='1' disabled></p>
-    <p>{{sizelabel}}: <input name='size' type='number' value='{{size}}' max='1000'></p>
+   <form action="index.php?id={{courseid}}" method="post">
+    <div class="form-row mb-2">
+        {{courseidlabel}}: <input name='courseid' type='number' value='{{courseid}}' disabled>
+    </div>
+    <div class="form-row mb-2">
+        {{sizelabel}}: <input name='size' type='number' value='{{size}}' max='{{maxlength}}'> (max. {{maxlength}})
+    </div>
    
-<b>{{optionsheader}} (maxlength {{maxlength}})</b><br>
+<b>{{optionsheader}} (maxoptionslength {{maxoptionslength}})</b><br>
 
 {{#options}}
-    {{{optionlable}}}: <input name='{{{optionname}}}' value='{{{optionvalue}}}' maxlength='{{maxlength}}'><br>
+    {{{optionlable}}}: <input name='{{{optionname}}}' value='{{{optionvalue}}}' maxlength='{{maxoptionslength}}'><br>
 {{/options}}
 
-<input type='submit' value='Generiere XML'><br>
+<br>
+<div class="form-row mb-2">
+    <button id='input_feedbackchoicegenerator' class='btn btn-primary' type='submit'>{{buttonlabel}}</button>
+</div>
+</form>
 
-</form><br>
+<div class="form-row mb-2">
+    <a class='btn btn-warning' href='{{dataurl}}' type='application/xml'>Download (rechte Maustaste speichern unter)</a>
+</div>
 
-<a href='reset.php'>Session zurücksetzen</a><br><br>
+
+<div class="form-row mb-2">
+    <a class='btn btn-danger' href='reset.php'>Session zurücksetzen</a>
+</div>  
+
 
 {{description}}<br>
 
-<textarea id="textarea" name="textarea" rows="50" cols="100">
+<textarea id="textarea_feedbackchoicegenerator" name="textarea_feedbackchoicegenerator" rows="20" cols="100" readonly >
 {{textareacontent}}
 </textarea>     

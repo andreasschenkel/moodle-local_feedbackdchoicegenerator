@@ -44,6 +44,10 @@ class Security
      * @throws coding_exception
      * @throws moodle_exception
      * @throws require_login_exception
+
+     * @todo userIsAllowedToViewTheCourse is not the correct name of this function
+     * because alsocapabilitiy to view report is checked. to do: refactoring 
+
      */
     public function userIsAllowedToViewTheCourse($courseId)
     {
@@ -51,5 +55,11 @@ class Security
         $course = $this->dbM->get_record('course', $params, '*', MUST_EXIST);
         // validate if the user is allowed to view this course
         require_login($course);
+
+        /**
+         * @todo userIsAllowedToViewTheCourse is not the correct name of this function. 
+         */
+        $coursecontext = context_course::instance($courseId);
+        require_capability('report/feedbackchoicegenerator:view', $coursecontext);
     }
 }

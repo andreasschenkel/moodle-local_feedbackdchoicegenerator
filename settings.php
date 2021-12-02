@@ -33,12 +33,21 @@ if ($ADMIN->fulltree) {
         0
     ));
 
-    $options = array(5 => '5', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 100 => '100', 10000 => '10000');
+    $options = array(5 => '5', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 100 => '100', 200 => '200');
 
     $settings->add(new admin_setting_configselect(
         'report_feedbackchoicegenerator_maxlength',
         get_string('maxlength', 'report_feedbackchoicegenerator'),
         get_string('configmaxlength', 'report_feedbackchoicegenerator'),
+        '30',
+        $options
+    ));
+
+    $options = array(5 => '5', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50');
+    $settings->add(new admin_setting_configselect(
+        'report_feedbackchoicegenerator_maxoptionslength',
+        get_string('maxoptionslength', 'report_feedbackchoicegenerator'),
+        get_string('configmaxoptionslength', 'report_feedbackchoicegenerator'),
         '30',
         $options
     ));
