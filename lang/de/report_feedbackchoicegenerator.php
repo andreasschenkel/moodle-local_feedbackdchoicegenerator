@@ -26,6 +26,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = '1./2. Wahl Feedback-Generator'; 
 
+$string['feedbackchoicegenerator:view'] = '1./2. Wahl Feedback-Generator anzeigen'; 
+
 $string['isactive'] = 'Bericht aktivieren';
 $string['configisactive'] = 'Wenn aktiviert kann der Bericht bei vorhandenen Berechtigungen im der Kursnavigation aufgerufen werden.';
 
@@ -45,3 +47,5 @@ $string['optionsheader'] = 'Eingabebereich der Optionen:';
 
 $string['description'] = 'Den hier erzeugten xml-Code in einer Textdatei kopieren und mit der Endung .xml speichern.
 Erste Zeile muss identisch zu dieser Zeile aussehen: <\?xml version=\"1.0\" encoding=\"UTF-8\" ?>';
+
+$string['buttonlabel'] = 'XML erzeugen oder aktualisieren';
