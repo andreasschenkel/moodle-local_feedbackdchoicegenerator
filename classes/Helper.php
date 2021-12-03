@@ -99,6 +99,7 @@ class Helper
       */
      static function generateSelectionOverview($level, $itemnumber, $firstchoicereferencenumber, $allOptionsToAdd, $option)
      {
+          $selectlabel = get_string('selectlabel', 'report_feedbackchoicegenerator');
           if ($level === 1) {
                $choicelabel = get_string('firstchoicelabel', 'report_feedbackchoicegenerator');
                $firstchoicereferencenumber = 0;
@@ -109,7 +110,7 @@ class Helper
           $output = $output . html_writer::start_tag('ITEM', array('TYPE' => 'multichoice', 'REQUIRED' => '0')) . "\n";
           $output = $output . html_writer::tag('ITEMID', "<![CDATA[$itemnumber]]>") . "\n";
           $output = $output . html_writer::tag('ITEMTEXT', "<![CDATA[$choicelabel]]>") . "\n";
-          $output = $output . html_writer::tag('ITEMLABEL', "<![CDATA[$choicelabel auswählen]]>") . "\n";
+          $output = $output . html_writer::tag('ITEMLABEL', "<![CDATA[$choicelabel $selectlabel]]>") . "\n";
           $output = $output . html_writer::tag('PRESENTATION', "<![CDATA[r>>>>>$allOptionsToAdd]]>") . "\n";
           $output = $output . html_writer::tag('OPTIONS', "<![CDATA[h]]>") . "\n";  
           $output = $output . html_writer::tag('DEPENDITEM', "<![CDATA[$firstchoicereferencenumber]]>") . "\n";

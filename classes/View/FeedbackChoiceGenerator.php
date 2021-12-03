@@ -126,6 +126,8 @@ class FeedbackChoiceGenerator
                 'maxoptionslength' => $maxoptionslength,
                 'textareacontent' => $textareacontent,
                 'buttonlabel' => get_string('buttonlabel', 'report_feedbackchoicegenerator'),
+                'downloadbuttonlabel' => get_string('downloadbuttonlabel', 'report_feedbackchoicegenerator'),
+                'resetbuttonlabel' => get_string('resetbuttonlabel', 'report_feedbackchoicegenerator'),
                 'dataurl' => $dataurl
             ]
         );

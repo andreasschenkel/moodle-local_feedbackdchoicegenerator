@@ -16,7 +16,7 @@
 
 /**
  * @package    report_feedbackchoicegenerator
- * @copyright  
+ * @copyright   Andreas Schenkel
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
