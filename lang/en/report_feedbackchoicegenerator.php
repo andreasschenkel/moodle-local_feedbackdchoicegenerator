@@ -54,3 +54,5 @@ $string['description'] = 'Download the generated code or put the generated xml-C
 $string['buttonlabel'] = 'generate XML or update';
 $string['downloadbuttonlabel'] = 'download with right click and save';
 $string['resetbuttonlabel'] = 'reset';
+
+$string['selectlabel'] = 'select';

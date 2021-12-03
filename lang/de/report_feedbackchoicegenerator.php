@@ -55,3 +55,5 @@ $string['description'] = 'Den hier erzeugten xml-Code mit Hilfe des Download-But
 $string['buttonlabel'] = 'XML erzeugen oder aktualisieren';
 $string['downloadbuttonlabel'] = 'Download (rechte Maustaste speichern und unter)';
 $string['resetbuttonlabel'] = 'Eingaben zurücksetzen';
+
+$string['selectlabel'] = 'auswählen';
