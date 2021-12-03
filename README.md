@@ -5,9 +5,16 @@ Plugin that helps to generate an xml-file to import into activity feedback to su
 ![image](https://user-images.githubusercontent.com/31856043/144513664-fed4377f-1517-44a4-a020-16094002a874.png)
 
 
-TODO Provide more detailed description here.
-
 ## Changelog ##
+[[v1.0.3]]
+
+03.12.2021
+
+- check that length of options is less than maxoptions
+- some layoutchanges
+- optimize implementation of reseting input
+- added missing languagestrings
+
 
 [[v1.0.2]]
 

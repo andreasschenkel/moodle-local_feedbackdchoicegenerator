@@ -5,39 +5,37 @@
 <?php session_start(); ?>
 
 <h3>{{header3}}</h3>
-<div>{{summary}}</div><br>
-
-   <form action="index.php?id={{courseid}}" method="post">
-    <div class="form-row mb-2">
-        {{courseidlabel}}: <input name='courseid' type='number' value='{{courseid}}' disabled>
-    </div>
-    <div class="form-row mb-2">
-        {{sizelabel}}: <input name='size' type='number' value='{{size}}' max='{{maxlength}}'> (max. {{maxlength}})
-    </div>
-   
-<b>{{optionsheader}} (maxoptionslength {{maxoptionslength}})</b><br>
-
-{{#options}}
-    {{{optionlable}}}: <input name='{{{optionname}}}' value='{{{optionvalue}}}' maxlength='{{maxoptionslength}}'><br>
-{{/options}}
-
-<br>
 <div class="form-row mb-2">
-    <button id='input_feedbackchoicegenerator' class='btn btn-primary' type='submit'>{{buttonlabel}}</button>
+    {{summary}}
 </div>
+
+<form action="index.php?id={{courseid}}" method="post">
+    <input name='courseid' type='hidden' value='{{courseid}}' disabled>
+
+    <div class="form-row mb-2">
+        <b>{{optionsheader}} (maxoptionslength {{maxoptionslength}})</b><br>
+    </div>
+
+    <div class="form-row mb-2">
+        {{sizelabel}}:&nbsp;<input name='size' type='number' value='{{size}}' max='{{maxlength}}' size='5'> (max. {{maxlength}})
+    </div>
+    
+    {{#options}}
+        {{{optionlabel}}}:&nbsp;<input name='{{{optionname}}}' value='{{{optionvalue}}}' maxlength='{{maxoptionslength}}'><br>
+    {{/options}}
+
+    <br>
+    <div class="form-row mb-2">
+        <button id='input_feedbackchoicegenerator' class='btn btn-primary' type='submit'>{{buttonlabel}}</button>
+        <a class='btn btn-warning' href='{{dataurl}}' type='application/xml'>Download (rechte Maustaste speichern unter)</a>
+        <a class='btn btn-danger' href='index.php?id={{courseid}}'>Session zurücksetzen</a>
+    </div> 
+
 </form>
 
 <div class="form-row mb-2">
-    <a class='btn btn-warning' href='{{dataurl}}' type='application/xml'>Download (rechte Maustaste speichern unter)</a>
-</div>
-
-
-<div class="form-row mb-2">
-    <a class='btn btn-danger' href='reset.php'>Session zurücksetzen</a>
-</div>  
-
-
-{{description}}<br>
+    {{description}}
+</div> 
 
 <textarea id="textarea_feedbackchoicegenerator" name="textarea_feedbackchoicegenerator" rows="20" cols="100" readonly >
 {{textareacontent}}

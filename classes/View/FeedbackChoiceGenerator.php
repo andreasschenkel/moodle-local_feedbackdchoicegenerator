@@ -67,39 +67,30 @@ class FeedbackChoiceGenerator
     public function init()
     {
         global $CFG;
-        $maxlength = $CFG->report_feedbackchoicegenerator_maxlength;
-        $maxoptionslength = $CFG->report_feedbackchoicegenerator_maxoptionslength;
+        $maxlength = (int)$CFG->report_feedbackchoicegenerator_maxlength;
+        $maxoptionslength = (int)$CFG->report_feedbackchoicegenerator_maxoptionslength;
 
-        // validate if the user is logged in and allowed to view the course
-        // this method throws an exception if the user is not allowed
-        $this->apiM->security()->userIsAllowedToViewTheCourse($this->courseId);
+        $this->apiM->security()->userIsAllowedToViewTheCourseAndHasCapabilityToUseGenerator($this->courseId);
 
         echo $this->getPage()->getOutput()->header();
-
-        /**
-         * todo type int casten
-         */
-        $size = trim($_POST["size"]);
-        if ($size != '') {
+       
+        $size = (is_numeric($_POST['size']) ? (int)$_POST['size'] : 2);
             if ($size > $maxlength) {
                 $size = $maxlength;
             }
-        }
 
         if ($size === '') {
             $size = 2;
         }
 
-
-        /**
-         * todo 'optionvalue' => $option_i     auf maxoptionslength reduzieren
-         */
         $filename = '';
         for ($i = 1; $i <= (int)$size; $i++) {
-            $option_i = trim($_POST["option$i"]); //bisherige werte auslesen trim($_POST["size"])
+            $option_i = trim($_POST["option$i"]);
+            // cut option_i if it is to long
+            $option_i = substr($option_i , 0, $maxoptionslength);
             $options[] = array(
                 'optionnumber' => $i,
-                'optionlable' => "Option $i",
+                'optionlabel' => "Option $i",
                 'optionname' => "option$i",
                 'optionvalue' => $option_i
             );
@@ -144,7 +135,6 @@ class FeedbackChoiceGenerator
      */
     public function textareagenerator($optionsArray): string
     {
-
         // define the itemnumber to start with (maybe later I will set it to 1 instead of 367)
         $itemnumber = 367;
 

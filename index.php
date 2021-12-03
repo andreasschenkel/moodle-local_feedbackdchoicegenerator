@@ -6,8 +6,7 @@ use report_feedbackchoicegenerator\View\FeedbackChoiceGenerator;
 
 /* 
  * @todo Assign global variables to local (parameter) variables.
- * At the moment, this approach is used for documentation
- * purposes.
+ * At the moment, this approach is used for documentation purposes.
  */
 
 $courseId = required_param('id', PARAM_INT);
