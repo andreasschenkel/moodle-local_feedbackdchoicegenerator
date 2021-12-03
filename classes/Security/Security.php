@@ -29,36 +29,19 @@ class Security
     }
 
     /**
-     * @param int $courseId
-     * @param stdClass $user
-     * @return bool
-     */
-    public function allowedToViewDeleteAllFiles($courseId, $user): bool
-    {
-        $coursecontext = context_course::instance($courseId);
-        // here you can change the roles or capabilities of who can view and delete the orphaned files
-        return is_enrolled($coursecontext, $user, 'moodle/course:manageactivities') || is_siteadmin();
-    }
-
-    /**
      * @throws coding_exception
      * @throws moodle_exception
      * @throws require_login_exception
-
-     * @todo userIsAllowedToViewTheCourse is not the correct name of this function
-     * because alsocapabilitiy to view report is checked. to do: refactoring 
-
      */
-    public function userIsAllowedToViewTheCourse($courseId)
+    public function userIsAllowedToViewTheCourseAndHasCapabilityToUseGenerator($courseId)
     {
         $params = ['id' => $courseId];
+        /**
+         * @todo check this code if it works correct????
+         */
         $course = $this->dbM->get_record('course', $params, '*', MUST_EXIST);
-        // validate if the user is allowed to view this course
         require_login($course);
 
-        /**
-         * @todo userIsAllowedToViewTheCourse is not the correct name of this function. 
-         */
         $coursecontext = context_course::instance($courseId);
         require_capability('report/feedbackchoicegenerator:view', $coursecontext);
     }

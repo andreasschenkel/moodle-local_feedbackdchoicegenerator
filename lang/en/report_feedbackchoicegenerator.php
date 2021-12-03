@@ -28,11 +28,14 @@ $string['pluginname'] = '1./2. choise-generator for feedback';
 
 $string['feedbackchoicegenerator:view'] = 'see 1.2-choice feedback-generator';
 
-$string['isactive'] = 'Activate report';
-$string['configisactive'] = 'When activate the report can be started in the coursenavigation.';
+$string['isactive'] = 'Activate generator';
+$string['configisactive'] = 'When activate the generator can be started in the coursenavigation.';
 
-$string['maxlength'] = 'maximum text length of an option';
-$string['configmaxlength'] = 'Up to this length a user can enter text as an option.';
+$string['maxoptionslength'] = 'maximum text length of an option';
+$string['configmaxoptionslength'] = 'Up to this length a user can enter text as an option.';
+
+$string['maxlength'] = 'max. count of options';
+$string['configmaxlength'] = 'Up to how many options can be used.';
 
 $string['firstchoicelabel'] = '1. choice';
 $string['secondchoicelabel'] = '2. choice';
