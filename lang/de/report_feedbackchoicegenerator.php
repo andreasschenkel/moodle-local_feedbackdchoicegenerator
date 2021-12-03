@@ -19,6 +19,7 @@
  *
  * @package     report_feedbackchoicegenerator
  * @category    string
+ * @copyright   Andreas Schenkel
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -52,3 +53,5 @@ $string['description'] = 'Den hier erzeugten xml-Code mit Hilfe des Download-But
     Alternativ den xml-Code in einer Textdatei kopieren und mit der Endung .xml speichern.';
 
 $string['buttonlabel'] = 'XML erzeugen oder aktualisieren';
+$string['downloadbuttonlabel'] = 'Download (rechte Maustaste speichern und unter)';
+$string['resetbuttonlabel'] = 'Eingaben zurücksetzen';

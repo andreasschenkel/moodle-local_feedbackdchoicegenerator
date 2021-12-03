@@ -19,6 +19,7 @@
  *
  * @package     report_feedbackchoicegenerator
  * @category    string
+ * @copyright   Andreas Schenkel
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -48,6 +49,8 @@ $string['sizelabel'] = 'How many options';
 
 $string['optionsheader'] = 'Enter options';
 
-$string['description'] = 'Put the generated xml-Code in to a textfile with the extension .xml. First line of code musst be: <\?xml version=\"1.0\" encoding=\"UTF-8\" ?>';
+$string['description'] = 'Download the generated code or put the generated xml-Code in to a textfile with the extension .xml.';
 
 $string['buttonlabel'] = 'generate XML or update';
+$string['downloadbuttonlabel'] = 'download with right click and save';
+$string['resetbuttonlabel'] = 'reset';
