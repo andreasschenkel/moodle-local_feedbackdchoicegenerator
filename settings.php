@@ -15,8 +15,6 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Course list block settings
- *
  * @package    report_feedbackchoicegenerator
  * @copyright  
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -39,7 +37,7 @@ if ($ADMIN->fulltree) {
         'report_feedbackchoicegenerator_maxlength',
         get_string('maxlength', 'report_feedbackchoicegenerator'),
         get_string('configmaxlength', 'report_feedbackchoicegenerator'),
-        '30',
+        '40',
         $options
     ));
 

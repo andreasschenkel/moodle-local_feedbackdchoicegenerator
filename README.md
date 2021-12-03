@@ -2,10 +2,17 @@
 
 Plugin that helps to generate an xml-file to import into activity feedback to support first and second choise feedback.
 
+![erstzweitwahl](https://user-images.githubusercontent.com/31856043/144657346-a58d6fd1-b3cf-4499-9a60-bf1080575483.gif)
+
 ![image](https://user-images.githubusercontent.com/31856043/144513664-fed4377f-1517-44a4-a020-16094002a874.png)
 
-
 ## Changelog ##
+[[v1.0.4]]
+
+03.12.2021
+
+- codebeautyfing
+
 [[v1.0.3]]
 
 03.12.2021

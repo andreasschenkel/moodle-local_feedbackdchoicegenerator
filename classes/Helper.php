@@ -1,5 +1,4 @@
 <?php
-
 namespace report_feedbackchoicegenerator;
 
 use html_writer;
@@ -8,13 +7,12 @@ class Helper
 {
 
      /**
+      * generates the options seperated by |
       * @return string with all options without the $selectedoption
-      * if $selectedoption is "" for first choice with ALL Options
       */
      static function generateOptionsList($options, $selectedoption)
      {
           $htmloutput = '';
-          // $last = count($options) - 1;
           $counter = 0;
           foreach ($options as $option) {
                if ($option != $selectedoption) {
@@ -29,6 +27,7 @@ class Helper
      }
 
      /**
+      * generates nessesary lines at the beginning of the file
       * @return string             
       */
       static function generateDocumentHeaderOpeninglines()
@@ -40,6 +39,7 @@ class Helper
       }
 
      /**
+      * generates nessesary lines at the end of the file to close the opened tags
       * @return string             
       */
       static function generateDocumentLastlines()
@@ -51,6 +51,7 @@ class Helper
       }
 
      /**
+      * generates the header that can be found in all xml-files for feedback
       * @param int $itemnumber     The number of the actual xml-component to be generated
       * @return string             
       */
@@ -70,6 +71,7 @@ class Helper
      }
 
      /**
+      * generates the pagebrakes to seperate the different options
       * @param int $itemnumber     The number of the actual xml-component to be generated
       */
      static function generatePagebreak($itemnumber)
@@ -88,6 +90,7 @@ class Helper
      }
 
      /**
+      * generates the list of options for first or second choice
       * @param integer $level      indicates if first choice oder second choise   
       * @param int $itemnumber     The number of the actual xml-component to be generated
       * @param int $firstchoicereferencenumber Number for to reference to in the second second choice
@@ -116,6 +119,7 @@ class Helper
      }
 
      /**
+      * generates the xml-code for the label
       * @param $xmlWriterPlus      
       * @param int $itemnumber     The number of the actual xml-component to be generated
       * @param int $firstchoicereferencenumber Number for to reference to in the second second choice

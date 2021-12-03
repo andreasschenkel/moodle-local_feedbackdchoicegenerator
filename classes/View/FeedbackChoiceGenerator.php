@@ -13,6 +13,10 @@ use report_feedbackchoicegenerator\Manager;
  */
 class FeedbackChoiceGenerator
 {
+
+    /**
+     * @var moodle_page
+     */
     private $page;
 
     /**
@@ -51,6 +55,7 @@ class FeedbackChoiceGenerator
     }
 
     /**
+     * getter for Page
      * @return Page
      */
     public function getPage(): Page
@@ -129,8 +134,8 @@ class FeedbackChoiceGenerator
     }
 
     /**
+     * generates the xml-content and returns the content as string
      * @param array $optionsArray   Array contains all options
-     * 
      * @return string xml-code to add into textarea in htmlpage
      */
     public function textareagenerator($optionsArray): string
