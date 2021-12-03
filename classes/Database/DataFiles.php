@@ -1,5 +1,4 @@
 <?php
-
 namespace report_feedbackchoicegenerator\Database;
 
 use moodle_database;

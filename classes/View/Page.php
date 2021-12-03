@@ -1,5 +1,4 @@
 <?php
-
 namespace report_feedbackchoicegenerator\View;
 
 use moodle_url;
@@ -10,7 +9,6 @@ class Page
     private $output;
     private $title;
     private $course;
-
 
     /**
      * @param moodle_page   $page
@@ -56,7 +54,7 @@ class Page
         return $this->page;
     }
 
-    public function getIconURL($instance)
+    public function getIconURLlöschen($instance)
     {
         return $this->getPage()->theme->image_url('icon', $instance->modname)->out();
     }

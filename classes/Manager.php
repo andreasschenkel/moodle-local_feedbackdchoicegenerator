@@ -1,14 +1,10 @@
 <?php
-
 namespace report_feedbackchoicegenerator;
 
 use moodle_database;
 
 use report_feedbackchoicegenerator\Database\Factory as DatabaseFactory;
-use report_feedbackchoicegenerator\Parser\Parser;
-use report_feedbackchoicegenerator\Files\Files;
 use report_feedbackchoicegenerator\Security\Security;
-use report_feedbackchoicegenerator\Handler\Factory as HandlerFactory;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -40,14 +36,6 @@ class Manager
     }
 
     /**
-     * @return Parser
-     */
-    public function parser(): Parser
-    {
-        return new Parser();
-    }
-
-    /**
      * @return Security
      */
     public function security(): Security
@@ -55,8 +43,4 @@ class Manager
         return new Security($this->dbM);
     }
 
-    public function handler(): HandlerFactory
-    {
-        return new HandlerFactory($this);
-    }
 }
