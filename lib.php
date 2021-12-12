@@ -23,15 +23,14 @@ defined('MOODLE_INTERNAL') || die;
  * @param stdClass $course The course to object for the report
  * @param stdClass $context The context of the course
  */
-function report_feedbackchoicegenerator_extend_navigation_course($navigation, $course, $context)
-{
+function report_feedbackchoicegenerator_extend_navigation_course($navigation, $course, $context) {
     global $CFG;
     $page = $GLOBALS['PAGE'];
     $url = new moodle_url('/report/feedbackchoicegenerator/index.php', array('id' => $course->id));
 
-    $feedbackchoicegeneratorNode = $page->navigation->find($course->id, navigation_node::TYPE_COURSE);
+    $feedbackchoicegeneratornode = $page->navigation->find($course->id, navigation_node::TYPE_COURSE);
 
-    $collection = $feedbackchoicegeneratorNode->children;
+    $collection = $feedbackchoicegeneratornode->children;
 
     foreach ($collection->getIterator() as $child) {
         $key = $child->key;
@@ -45,8 +44,9 @@ function report_feedbackchoicegenerator_extend_navigation_course($navigation, $c
     }
 
     if ($isactive) {
-        $node = $feedbackchoicegeneratorNode->create(get_string('pluginname', 'report_feedbackchoicegenerator'), $url, navigation_node::NODETYPE_LEAF, null, 'gradebook',  new pix_icon('i/report', 'grades'));
-        $feedbackchoicegeneratorNode->add_node($node,  $key);
+        $node = $feedbackchoicegeneratornode->create(get_string('pluginname', 'report_feedbackchoicegenerator'),
+            $url, navigation_node::NODETYPE_LEAF, null, 'gradebook',  new pix_icon('i/report', 'grades'));
+        $feedbackchoicegeneratornode->add_node($node,  $key);
     }
 
     if (has_capability('moodle/feedbackchoicegenerator:view', $context)) {

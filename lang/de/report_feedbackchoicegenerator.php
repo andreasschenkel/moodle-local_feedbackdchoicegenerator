@@ -25,9 +25,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = '1./2. Wahl Feedback-Generator'; 
+$string['pluginname'] = '1./2. Wahl Feedback-Generator';
 
-$string['feedbackchoicegenerator:view'] = '1./2. Wahl Feedback-Generator anzeigen'; 
+$string['feedbackchoicegenerator:view'] = '1./2. Wahl Feedback-Generator anzeigen';
 
 $string['isactive'] = 'Generator aktivieren';
 $string['configisactive'] = 'Wenn aktiviert kann der Generator bei vorhandenen Berechtigungen im der Kursnavigation aufgerufen werden.';
@@ -49,7 +49,7 @@ $string['sizelabel'] = 'Anzahl der Optionen';
 
 $string['optionsheader'] = 'Eingabebereich der Optionen:';
 
-$string['description'] = 'Den hier erzeugten xml-Code mit Hilfe des Download-Buttons herunterladen (rechte Maustaste nutzen und Speichern unter wählen). 
+$string['description'] = 'Den hier erzeugten xml-Code mit Hilfe des Download-Buttons herunterladen (rechte Maustaste nutzen und Speichern unter wählen).
     Alternativ den xml-Code in einer Textdatei kopieren und mit der Endung .xml speichern.';
 
 $string['buttonlabel'] = 'XML erzeugen oder aktualisieren';
