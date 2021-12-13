@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 require_once(__DIR__ . '/../../config.php');
-
+require_login();
 use report_feedbackchoicegenerator\View\FeedbackChoiceGenerator;
 
 // Assign global variables to local (parameter) variables.

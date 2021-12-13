@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace report_feedbackchoicegenerator\Database;
-
+defined('MOODLE_INTERNAL') || die;
 use moodle_database;
 
 /**

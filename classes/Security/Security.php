@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace report_feedbackchoicegenerator\Security;
-
+defined('MOODLE_INTERNAL') || die;
 use coding_exception;
 use context_course;
 use moodle_database;
