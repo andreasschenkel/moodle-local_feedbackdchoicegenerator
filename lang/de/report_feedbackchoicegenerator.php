@@ -27,6 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = '1./2. Wahl Feedback-Generator';
 
+$string['privacy:metadata'] = 'Dieses Tool generiert xml-Code der im Browser angezeigt wird. Persönliche Daten sind im xml-code nicht enthalten oder gespeichert.';
+
 $string['feedbackchoicegenerator:view'] = '1./2. Wahl Feedback-Generator anzeigen';
 
 $string['isactive'] = 'Generator aktivieren';

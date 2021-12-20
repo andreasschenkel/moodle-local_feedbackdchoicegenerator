@@ -9,36 +9,29 @@ Plugin that helps to generate an xml-file to import into activity feedback to su
 ## Changelog ##
 [[v1.0.x]]
 
-12.12.2021
-
-- to support moodle styleguide use code checker to find codebeautyfing issues 
+- 12.12.2021 to support moodle styleguide use code checker to find codebeautyfing issues
+- 20.12.2021 add privacy provider implementation to inform that no private date is stored
 
 [[v1.0.4]]
 
-03.12.2021
-
-- codebeautyfing
+- 03.12.2021 codebeautyfing
 
 [[v1.0.3]]
 
-03.12.2021
-
-- check that length of options is less than maxoptions
-- some layoutchanges
-- optimize implementation of reseting input
-- added missing languagestrings
+- 03.12.2021 check that length of options is less than maxoptions
+- 03.12.2021 some layoutchanges
+- 03.12.2021 optimize implementation of reseting input
+- 03.12.2021 added missing languagestrings
 
 
 [[v1.0.2]]
 
-02.12.2021
-
-- use dataurl to be able to download xml-file
-- max length of option configurable
-- set capability für role editingteacher instead of teacher
-- check, if user has capability to view report also by checking the capapility
-- do not prevent capability for student
-- added missing languagestring feedbackchoicegenerator:view
+- 02.12.2021 use dataurl to be able to download xml-file
+- 02.12.2021 max length of option configurable
+- 02.12.2021 set capability für role editingteacher instead of teacher
+- 02.12.2021 check, if user has capability to view report also by checking the capapility
+- 02.12.2021 do not prevent capability for student
+- 02.12.2021 added missing languagestring feedbackchoicegenerator:view
 
 
 [[v1.0.1]] beta
