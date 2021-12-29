@@ -15,22 +15,14 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Plugin capabilities are defined here.
+ * Plugin strings are defined here.
  *
  * @package     local_feedbackchoicegenerator
- * @category    access
+ * @category    string
  * @copyright   Andreas Schenkel
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$capabilities = [
-    'local/feedbackchoicegenerator:view' => [
-        'captype' => 'read',
-        'contextlevel' => CONTEXT_COURSE,
-        'archetypes' => [
-            'editingteacher' => CAP_ALLOW,
-        ],
-    ],
-];
+$string['pluginname'] = 'local 1./2. choise-generator for feedback';

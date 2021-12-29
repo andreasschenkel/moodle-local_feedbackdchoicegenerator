@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 require_once(__DIR__ . '/../../config.php');
 require_login();
-use report_feedbackchoicegenerator\View\FeedbackChoiceGenerator;
+use local_feedbackchoicegenerator\View\FeedbackChoiceGenerator;
 
 // Assign global variables to local (parameter) variables.
 // At the moment, this approach is used for documentation purposes.
@@ -28,7 +28,7 @@ $db = $DB;
 $feedbackchoicegeneratorinstance = new FeedbackChoiceGenerator($db, $courseid, $page, $output, $user);
 
 global $CFG;
-$isactive = $CFG->report_feedbackchoicegenerator_isactive;
+$isactive = $CFG->local_feedbackchoicegenerator_isactive;
 if ($isactive) {
     $feedbackchoicegeneratorinstance->init();
 } else {

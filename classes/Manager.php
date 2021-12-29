@@ -14,11 +14,11 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace report_feedbackchoicegenerator;
+namespace local_feedbackchoicegenerator;
 defined('MOODLE_INTERNAL') || die;
 use moodle_database;
-use report_feedbackchoicegenerator\Database\Factory as DatabaseFactory;
-use report_feedbackchoicegenerator\Security\Security;
+use local_feedbackchoicegenerator\Database\Factory as DatabaseFactory;
+use local_feedbackchoicegenerator\Security\Security;
 
 defined('MOODLE_INTERNAL') || die();
 

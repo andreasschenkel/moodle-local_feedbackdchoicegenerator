@@ -1,7 +1,7 @@
 <?php
 // …
 
-namespace  report_feedbackchoicegenerator\privacy;
+namespace  local_feedbackchoicegenerator\privacy;
 
 class provider implements
     // This plugin does not store any personal user data.

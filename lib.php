@@ -20,13 +20,13 @@ defined('MOODLE_INTERNAL') || die;
  * This function extends the navigation with the report items
  *
  * @param navigation_node $navigation The navigation node to extend
- * @param stdClass $course The course to object for the report
+ * @param stdClass $course The course to object for the generator
  * @param stdClass $context The context of the course
  */
-function report_feedbackchoicegenerator_extend_navigation_course($navigation, $course, $context) {
+function local_feedbackchoicegenerator_extend_navigation_course($navigation, $course, $context) {
     global $CFG;
     $page = $GLOBALS['PAGE'];
-    $url = new moodle_url('/report/feedbackchoicegenerator/index.php', array('id' => $course->id));
+    $url = new moodle_url('/local/feedbackchoicegenerator/index.php', array('id' => $course->id));
 
     $feedbackchoicegeneratornode = $page->navigation->find($course->id, navigation_node::TYPE_COURSE);
 
@@ -34,29 +34,23 @@ function report_feedbackchoicegenerator_extend_navigation_course($navigation, $c
 
     foreach ($collection->getIterator() as $child) {
         $key = $child->key;
-        break;
+        // position of node before this note
+        if ($key === 'participants') {
+            break;
+        }
     }
 
-    if ($CFG->report_feedbackchoicegenerator_isactive == true) {
-        $isactive = true;
-    } else {
-        $isactive = false;
-    }
-
-    if ($isactive) {
-        $node = $feedbackchoicegeneratornode->create(get_string('pluginname', 'report_feedbackchoicegenerator'),
-            $url, navigation_node::NODETYPE_LEAF, null, 'gradebook',  new pix_icon('i/report', 'grades'));
+        $node = $feedbackchoicegeneratornode->create(get_string('pluginname', 'local_feedbackchoicegenerator'),
+            $url, navigation_node::NODETYPE_LEAF, null, 'feedbackchoicegenerator',  new pix_icon('i/report', 'grades'));
         $feedbackchoicegeneratornode->add_node($node,  $key);
-    }
-
-    if (has_capability('moodle/feedbackchoicegenerator:view', $context)) {
+   
         $navigation->add(
-            get_string('pluginname', 'report_feedbackchoicegenerator'),
+            get_string('pluginname', 'local_feedbackchoicegenerator'),
             $url,
             navigation_node::TYPE_SETTING,
             null,
             null,
             new pix_icon('i/report', '')
         );
-    }
+    
 }

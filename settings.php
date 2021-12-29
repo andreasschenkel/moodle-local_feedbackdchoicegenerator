@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package    report_feedbackchoicegenerator
+ * @package    local_feedbackchoicegenerator
  * @copyright   Andreas Schenkel
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -25,27 +25,27 @@ defined('MOODLE_INTERNAL') || die;
 if ($ADMIN->fulltree) {
 
     $settings->add(new admin_setting_configcheckbox(
-        'report_feedbackchoicegenerator_isactive',
-        get_string('isactive', 'report_feedbackchoicegenerator'),
-        get_string('configisactive', 'report_feedbackchoicegenerator'),
+        'local_feedbackchoicegenerator_isactive',
+        get_string('isactive', 'local_feedbackchoicegenerator'),
+        get_string('configisactive', 'local_feedbackchoicegenerator'),
         0
     ));
 
     $options = array(5 => '5', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 100 => '100', 200 => '200');
 
     $settings->add(new admin_setting_configselect(
-        'report_feedbackchoicegenerator_maxlength',
-        get_string('maxlength', 'report_feedbackchoicegenerator'),
-        get_string('configmaxlength', 'report_feedbackchoicegenerator'),
+        'local_feedbackchoicegenerator_maxlength',
+        get_string('maxlength', 'local_feedbackchoicegenerator'),
+        get_string('configmaxlength', 'local_feedbackchoicegenerator'),
         '40',
         $options
     ));
 
     $options = array(5 => '5', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50');
     $settings->add(new admin_setting_configselect(
-        'report_feedbackchoicegenerator_maxoptionslength',
-        get_string('maxoptionslength', 'report_feedbackchoicegenerator'),
-        get_string('configmaxoptionslength', 'report_feedbackchoicegenerator'),
+        'local_feedbackchoicegenerator_maxoptionslength',
+        get_string('maxoptionslength', 'local_feedbackchoicegenerator'),
+        get_string('configmaxoptionslength', 'local_feedbackchoicegenerator'),
         '30',
         $options
     ));

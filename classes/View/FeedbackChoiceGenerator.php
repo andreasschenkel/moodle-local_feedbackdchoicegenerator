@@ -14,13 +14,13 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace report_feedbackchoicegenerator\View;
+namespace local_feedbackchoicegenerator\View;
 
 use stdClass;
 use moodle_database;
 
-use report_feedbackchoicegenerator\Helper;
-use report_feedbackchoicegenerator\Manager;
+use local_feedbackchoicegenerator\Helper;
+use local_feedbackchoicegenerator\Manager;
 
 /**
  * Class FeedbackChoiceGenerator
@@ -82,8 +82,8 @@ class FeedbackChoiceGenerator
      */
     public function init() {
         global $CFG;
-        $maxlength = (int)$CFG->report_feedbackchoicegenerator_maxlength;
-        $maxoptionslength = (int)$CFG->report_feedbackchoicegenerator_maxoptionslength;
+        $maxlength = (int)$CFG->local_feedbackchoicegenerator_maxlength;
+        $maxoptionslength = (int)$CFG->local_feedbackchoicegenerator_maxoptionslength;
 
         $this->apim->security()->user_is_allowed_to_view_the_course_and_has_capability_to_use_generator($this->courseid);
 
@@ -116,28 +116,28 @@ class FeedbackChoiceGenerator
         $dataurl = 'data:application/xml;charset=UTF-8;utf8,' . $textareacontent;
 
         echo $this->get_page()->get_output()->render_from_template(
-            'report_feedbackchoicegenerator/reportgenerator',
+            'local_feedbackchoicegenerator/localgenerator',
             [
                 'courseid' => $this->courseid,
                 'title' => $this->get_page()->get_title(),
-                'header3' => get_string('header3', 'report_feedbackchoicegenerator'),
-                'summary' => get_string('summary', 'report_feedbackchoicegenerator'),
+                'header3' => get_string('header3', 'local_feedbackchoicegenerator'),
+                'summary' => get_string('summary', 'local_feedbackchoicegenerator'),
 
-                'courseidlabel' => get_string('courseidlabel', 'report_feedbackchoicegenerator'),
-                'sizelabel' => get_string('sizelabel', 'report_feedbackchoicegenerator'),
+                'courseidlabel' => get_string('courseidlabel', 'local_feedbackchoicegenerator'),
+                'sizelabel' => get_string('sizelabel', 'local_feedbackchoicegenerator'),
                 'maxlength' => $maxlength,
 
-                'optionsheader' => get_string('optionsheader', 'report_feedbackchoicegenerator'),
-                'description' => get_string('description', 'report_feedbackchoicegenerator'),
+                'optionsheader' => get_string('optionsheader', 'local_feedbackchoicegenerator'),
+                'description' => get_string('description', 'local_feedbackchoicegenerator'),
 
                 'size' => $size,
                 'filename' => $filename,
                 'options' => $options,
                 'maxoptionslength' => $maxoptionslength,
                 'textareacontent' => $textareacontent,
-                'buttonlabel' => get_string('buttonlabel', 'report_feedbackchoicegenerator'),
-                'downloadbuttonlabel' => get_string('downloadbuttonlabel', 'report_feedbackchoicegenerator'),
-                'resetbuttonlabel' => get_string('resetbuttonlabel', 'report_feedbackchoicegenerator'),
+                'buttonlabel' => get_string('buttonlabel', 'local_feedbackchoicegenerator'),
+                'downloadbuttonlabel' => get_string('downloadbuttonlabel', 'local_feedbackchoicegenerator'),
+                'resetbuttonlabel' => get_string('resetbuttonlabel', 'local_feedbackchoicegenerator'),
                 'dataurl' => $dataurl
             ]
         );

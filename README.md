@@ -1,4 +1,4 @@
-# Report #
+# Local #
 
 Plugin that helps to generate an xml-file to import into activity feedback to support first and second choise feedback.
 
@@ -11,6 +11,7 @@ Plugin that helps to generate an xml-file to import into activity feedback to su
 
 - 12.12.2021 to support moodle styleguide use code checker to find codebeautyfing issues
 - 20.12.2021 add privacy provider implementation to inform that no private date is stored
+- transfer code from plugintype report to local
 
 [[v1.0.4]]
 
@@ -55,7 +56,7 @@ Plugin that helps to generate an xml-file to import into activity feedback to su
 
 The plugin can be also installed by putting the contents of this directory to
 
-    {your/moodle/dirroot}/report/feedbackchoicegenerator
+    {your/moodle/dirroot}/local/feedbackchoicegenerator
 
 Afterwards, log in to your Moodle site as an admin and go to _Site administration >
 Notifications_ to complete the installation.
