@@ -7,11 +7,12 @@ Plugin that helps to generate an xml-file to import into activity feedback to su
 ![image](https://user-images.githubusercontent.com/31856043/144513664-fed4377f-1517-44a4-a020-16094002a874.png)
 
 ## Changelog ##
-[[v1.0.x]]
+[[v1.0.5]]
 
 - 12.12.2021 to support moodle styleguide use code checker to find codebeautyfing issues
 - 20.12.2021 add privacy provider implementation to inform that no private date is stored
-- transfer code from plugintype report to local
+- 29.12.2021 transfer code from plugintype report to local
+- 30.12.2021 settings-problem solved
 
 [[v1.0.4]]
 
