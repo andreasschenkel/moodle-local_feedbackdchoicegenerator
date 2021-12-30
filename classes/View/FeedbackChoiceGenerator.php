@@ -83,7 +83,14 @@ class FeedbackChoiceGenerator
 
         echo $this->get_page()->get_output()->header();
 
-        $size = (is_numeric($_POST['size']) ? (int)$_POST['size'] : 2);
+        if (isset($_POST['size'])) {
+            $size = (is_numeric($_POST['size']) ? (int)$_POST['size'] : 2);
+        } else {
+            $size = 3;
+        }
+
+
+
         if ($size > $maxlength) {
             $size = $maxlength;
         }
@@ -94,7 +101,12 @@ class FeedbackChoiceGenerator
 
         $filename = '';
         for ($i = 1; $i <= (int)$size; $i++) {
-            $optioncounter = trim($_POST["option$i"]);
+            if (isset($_POST["option$i"])) {
+                 $optioncounter = trim($_POST["option$i"]);
+            } else {
+                $optioncounter = '';
+            }
+
             // Cut optioncounter if it is to long.
             $optioncounter = substr($optioncounter , 0, $maxoptionslength);
             $options[] = array(
@@ -162,6 +174,7 @@ class FeedbackChoiceGenerator
         // First selectionoverview with all options is level=1.
         $level = 1;
         // ToDo: $option has to be set -> use of pattern SOLID.
+        $option = '';
         $textareacontent = $textareacontent . $helper->generate_selection_overview(
             $level,
             ++$itemnumber,
