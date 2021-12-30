@@ -1,6 +1,21 @@
 <?php
-namespace report_feedbackchoicegenerator\Database;
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+namespace local_feedbackchoicegenerator\Database;
+defined('MOODLE_INTERNAL') || die();
 use moodle_database;
 
 /**
@@ -15,50 +30,41 @@ class DataFiles
      * @var moodle_database The database connection an instance of this class
      *                      operates on.
      */
-    private $dbM;
+    private $dbm;
 
     /**
      * Creates a new instance which is bound to a database using the given
      * database connection.
-     * 
-     * @param moodle_database $dbM The database connection to be used by this 
+     * @param moodle_database $dbm The database connection to be used by this
      *                             instance.
      */
-    public function __construct(moodle_database $dbM)
-    {
-        $this->dbM = $dbM;
+    public function __construct(moodle_database $dbm) {
+        $this->dbm = $dbm;
     }
 
     /**
      * Returns the database connection used by the instance.
-     * 
      * @return moodle_database The database instance.
      */
-    public function getDatabase(): moodle_database
-    {
-        return $this->dbM;
+    public function get_database(): moodle_database {
+        return $this->dbm;
     }
 
     /**
      * Queries created by this class are based on SELECT statements. The Moodle
      * database subsystem provides functionality for statement construction, i.e.
      * a mechanism that substitutes variables in strings with concrete values.
-     * 
      * This method creates strings that follow this pattern. For each variable
      * name in the parameter array, a corresponding entry in the result array is
      * created, consisting of the variable's name (SQL world) and its substitution
      * position (Moodle world), i.e. the name prefixed with „:“.
-     * 
      * Example: „userid“ ---> „userid = :userid“
-     * 
      * @param array $elements The array of strings which should be interpreted as
      *                        variable names.
-     * 
      * @return array An array of strings conforming to the described structural
-     *               pattern. 
+     *               pattern.
      */
-    protected function createWhereString(array $elements): array
-    {
+    protected function create_where_string(array $elements): array {
         return array_map(function ($element) {
             return $element . " = :" . $element;
         }, $elements);
@@ -68,41 +74,33 @@ class DataFiles
      * Prepares the statement to be emitted to the database layer of the Moodle
      * system. Given parameters are combined using AND, forming the final
      * WHERE clause.
-     * 
      * @param array $params An array whose keys should be used as components of the
      *                      WHERE clause for a SELECT statement.
-     * 
      * @return string A valid SQL statement ready to be used with the Moodle database
      *                subsystem.
      */
-    protected function prepareStatement(array $params): string
-    {
-        $where = implode(" AND ", $this->createWhereString(array_keys($params)));
+    protected function prepare_statement(array $params): string {
+        $where = implode(" AND ", $this->create_where_string(array_keys($params)));
 
         return "SELECT * FROM {files} WHERE {$where}";
     }
 
-    /** 
+    /**
      * Performs a query using the keys and values of the parameter array as part
      * of the command's WHERE clause.
-     * 
      * @param array $params An array whose keys should be used as components of the
      *                      WHERE clause for the SELECT statement.
-     * 
      * @return array An array containing the results of the performed query.
      */
-    protected function performQuery(array $params): array
-    {
-        return $this->getDatabase()->get_records_sql($this->prepareStatement($params), $params);
+    protected function perform_query(array $params): array {
+        return $this->get_database()->get_records_sql($this->prepare_statement($params), $params);
     }
 
-    public function getCourse($courseId)
-    {
-        return $this->getDatabase()->get_record('course', ['id' => $courseId], '*', MUST_EXIST);
+    public function get_course($courseid) {
+        return $this->get_database()->get_record('course', ['id' => $courseid], '*', MUST_EXIST);
     }
 
-    public function getPage($instance)
-    {
-        return $this->getDatabase()->get_record('page', ['id' => $instance->instance], '*');
+    public function get_page($instance) {
+        return $this->get_database()->get_record('page', ['id' => $instance->instance], '*');
     }
 }

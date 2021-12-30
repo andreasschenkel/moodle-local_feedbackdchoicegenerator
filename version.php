@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,19 +12,20 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package     report_feedbackchoicegenerator
- * @author      Andreas Schenkel 
- * @copyright   Andreas Schenkel
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * Version details.
+ *
+ * @package    local_feedbackchoicegenerator
+ * @copyright  2021 Andreas Schenkel
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
-$plugin->component = 'report_feedbackchoicegenerator';
-$plugin->release = '1.0.5';
-$plugin->version = 2021120303;
-$plugin->requires = 2020061500;
-$plugin->maturity = MATURITY_RC;
+$plugin->maturity = MATURITY_BETA;
+$plugin->version  = 2021121301;
+$plugin->component = 'local_feedbackchoicegenerator';
+$plugin->requires = 2017111300;
+$plugin->release = 'v0.0.1';
