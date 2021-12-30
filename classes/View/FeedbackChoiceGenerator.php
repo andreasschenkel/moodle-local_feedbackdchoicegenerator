@@ -38,10 +38,6 @@ class FeedbackChoiceGenerator
      */
     private $courseid;
 
-    /**
-     * @var stdClass
-     */
-    private $user;
 
     /**
      * @var Manager
@@ -54,11 +50,9 @@ class FeedbackChoiceGenerator
      * @param int $courseid
      * @param moodle_page $page
      * @param bootstrap_renderer $output
-     * @param stdClass $user
      */
-    public function __construct($db, int $courseid, $page, $output, $user) {
+    public function __construct($db, int $courseid, $page, $output) {
         $this->courseid = $courseid;
-        $this->user = $user;
         $this->apim = new Manager($db);
 
         $course = $this->apim->database()->data_files()->get_course($courseid);
@@ -116,7 +110,7 @@ class FeedbackChoiceGenerator
         $dataurl = 'data:application/xml;charset=UTF-8;utf8,' . $textareacontent;
 
         echo $this->get_page()->get_output()->render_from_template(
-            'local_feedbackchoicegenerator/localgenerator',
+            'local_feedbackchoicegenerator/local',
             [
                 'courseid' => $this->courseid,
                 'title' => $this->get_page()->get_title(),

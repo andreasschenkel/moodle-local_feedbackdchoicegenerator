@@ -22,13 +22,13 @@ use local_feedbackchoicegenerator\View\FeedbackChoiceGenerator;
 $courseid = required_param('id', PARAM_INT);
 $page = $PAGE;
 $output = $OUTPUT;
-$user = $USER;
 $db = $DB;
 
-$feedbackchoicegeneratorinstance = new FeedbackChoiceGenerator($db, $courseid, $page, $output, $user);
+$feedbackchoicegeneratorinstance = new FeedbackChoiceGenerator($db, $courseid, $page, $output);
 
 global $CFG;
-$isactive = $CFG->local_feedbackchoicegenerator_isactive;
+$isactive = true;
+// $isactive = $CFG->local_feedbackchoicegenerator_isactive;
 if ($isactive) {
     $feedbackchoicegeneratorinstance->init();
 } else {

@@ -25,4 +25,34 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'local 1./2. choise-generator for feedback';
+$string['pluginname'] = '1./2. choise-generator for feedback';
+
+$string['feedbackchoicegenerator:view'] = 'see 1.2-choice feedback-generator';
+
+$string['isactive'] = 'Activate generator';
+$string['configisactive'] = 'When activate the generator can be started in the coursenavigation.';
+
+$string['maxoptionslength'] = 'maximum text length of an option';
+$string['configmaxoptionslength'] = 'Up to this length a user can enter text as an option.';
+
+$string['maxlength'] = 'max. count of options';
+$string['configmaxlength'] = 'Up to how many options can be used.';
+
+$string['firstchoicelabel'] = '1. choice';
+$string['secondchoicelabel'] = '2. choice';
+
+$string['header3'] = '1. choice and 2. choice';
+$string['summary'] = 'Generating import-file for activity feedback';
+
+$string['courseidlabel'] = 'course id';
+$string['sizelabel'] = 'How many options';
+
+$string['optionsheader'] = 'Enter options';
+
+$string['description'] = 'Download the generated code or put the generated xml-Code in to a textfile with the extension .xml.';
+
+$string['buttonlabel'] = 'generate XML or update';
+$string['downloadbuttonlabel'] = 'download with right click and save';
+$string['resetbuttonlabel'] = 'reset';
+
+$string['selectlabel'] = 'select';

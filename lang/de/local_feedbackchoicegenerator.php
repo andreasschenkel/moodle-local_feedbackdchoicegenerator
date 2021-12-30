@@ -25,4 +25,35 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'lockal 1./2. Wahl Feedback-Generator';
+$string['pluginname'] = '1./2. Wahl Feedback-Generator'; 
+
+$string['feedbackchoicegenerator:view'] = '1./2. Wahl Feedback-Generator anzeigen'; 
+
+$string['isactive'] = 'Generator aktivieren';
+$string['configisactive'] = 'Wenn aktiviert kann der Generator bei vorhandenen Berechtigungen im der Kursnavigation aufgerufen werden.';
+
+$string['maxoptionslength'] = 'Max. Länge der Optionen';
+$string['configmaxoptionslength'] = 'Bis zu dieser Länge kann der Text einer Option eingegeben werden.';
+
+$string['maxlength'] = 'Max. Anzahl der Optionen';
+$string['configmaxlength'] = 'Maximale Anzahl an Optionen, die man anbieten kann.';
+
+$string['firstchoicelabel'] = '1. Wahl';
+$string['secondchoicelabel'] = '2. Wahl';
+
+$string['header3'] = '1. Wahl und 2. Wahl';
+$string['summary'] = 'Ein Generator für die Aktivität Feedback, um eine 1. und 2. Wahl umzusetzen.';
+
+$string['courseidlabel'] = 'Kursid';
+$string['sizelabel'] = 'Anzahl der Optionen';
+
+$string['optionsheader'] = 'Eingabebereich der Optionen:';
+
+$string['description'] = 'Den hier erzeugten xml-Code mit Hilfe des Download-Buttons herunterladen (rechte Maustaste nutzen und Speichern unter wählen). 
+    Alternativ den xml-Code in einer Textdatei kopieren und mit der Endung .xml speichern.';
+
+$string['buttonlabel'] = 'XML erzeugen oder aktualisieren';
+$string['downloadbuttonlabel'] = 'Download (rechte Maustaste speichern und unter)';
+$string['resetbuttonlabel'] = 'Eingaben zurücksetzen';
+
+$string['selectlabel'] = 'auswählen';
