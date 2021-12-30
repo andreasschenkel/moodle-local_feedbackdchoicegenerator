@@ -110,7 +110,7 @@ class FeedbackChoiceGenerator
         $dataurl = 'data:application/xml;charset=UTF-8;utf8,' . $textareacontent;
 
         echo $this->get_page()->get_output()->render_from_template(
-            'local_feedbackchoicegenerator/local',
+            'local_feedbackchoicegenerator/mainpage',
             [
                 'courseid' => $this->courseid,
                 'title' => $this->get_page()->get_title(),
