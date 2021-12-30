@@ -22,6 +22,12 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+$settings = new admin_settingpage( 'local_feedbackchoicegenerator', 'Feedbackchoice generator' );
+
+// Create 
+$ADMIN->add( 'localplugins', $settings );
+
+
 if ($ADMIN->fulltree) {
 
     $settings->add(new admin_setting_configcheckbox(
