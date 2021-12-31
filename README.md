@@ -8,9 +8,10 @@ Plugin that helps to generate an xml-file to import into activity feedback to su
 
 ## Changelog ##
 
-[[v2.0.1]]
+[[v2.0.2]]
 
 - 31.12.2021 css and layout improvements, add link back to the course, bug with activating generator in settings-page of the plugin
+[[v2.0.1]]
 
 [[v2.0.0]]
 
