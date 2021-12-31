@@ -3,40 +3,54 @@
 }}
 
 <?php session_start(); ?>
+<a href="/course/view.php?id={{courseid}}">{{backtocourselabel}}</a>
+<div id='feedbackchoicegenerator'>
+    <h3>{{header3}}</h3>
+        <div class="summary">
+            {{summary}}
+        </div>
+        <div class="optionslengthinfo">
+            {{optionslengthinfo}} {{maxoptionslength}}
+        </div>
 
-<h3>{{header3}}</h3>
-<div class="form-row mb-2">
-    {{summary}}
-</div>
 
-<form action="index.php?id={{courseid}}" method="post">
-    <input name='courseid' type='hidden' value='{{courseid}}' disabled>
 
-    <div class="form-row mb-2">
-        <b>{{optionsheader}} (maxoptionslength {{maxoptionslength}})</b><br>
-    </div>
 
-    <div class="form-row mb-2">
-        {{sizelabel}}:&nbsp;<input name='size' type='number' value='{{size}}' max='{{maxlength}}' size='5'> (max. {{maxlength}})
-    </div>
-    
-    {{#options}}
-        {{{optionlabel}}}:&nbsp;<input name='{{{optionname}}}' value='{{{optionvalue}}}' maxlength='{{maxoptionslength}}'><br>
-    {{/options}}
+    <form action="index.php?id={{courseid}}" method="post">
+        <input name='courseid' type='hidden' value='{{courseid}}' disabled>
 
-    <br>
-    <div class="form-row mb-2">
-        <button id='input_feedbackchoicegenerator' class='btn btn-primary' type='submit'>{{buttonlabel}}</button>
-        <a class='btn btn-warning' href='{{dataurl}}' type='application/xml'>{{downloadbuttonlabel}}</a>
-        <a class='btn btn-danger' href='index.php?id={{courseid}}'>{{resetbuttonlabel}}</a>
-    </div> 
+        <div class="row mb-2">
+            <div class="col">
+                {{sizelabel}} (max. {{maxlength}}):&nbsp;
+                <input name='size' type='number' value='{{size}}' max='{{maxlength}}' size='5'> 
+                <button id='update_feedbackchoicegenerator' class='btn btn-primary' type='submit'>{{updatebuttonlabel}}</button>
+            </div>
+        </div>
 
-</form>
+        <div class="row mb-2">
+            <div class="col">
+                {{#options}}
+                    {{{optionlabel}}}:&nbsp;<input name='{{{optionname}}}' value='{{{optionvalue}}}' maxlength='{{maxoptionslength}}'><br>
+                {{/options}}
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col">
+                <button id='input_feedbackchoicegenerator' class='btn btn-primary' type='submit'>{{buttonlabel}}</button>
+   
+                <a class='btn btn-danger' href='index.php?id={{courseid}}'>{{resetbuttonlabel}}</a><br>
+                <a class='download_feedbackchoicegenerator' href='{{dataurl}}' type='application/xml'>{{downloadbuttonlabel}}</a>
+            </div> 
+        </div> 
 
-<div class="form-row mb-2">
-    {{description}}
-</div> 
+        </form>
 
-<textarea id="textarea_feedbackchoicegenerator" name="textarea_feedbackchoicegenerator" rows="20" cols="100" readonly >
+        <div class="row mb-2">
+            {{description}}
+        </div> 
+
+        <textarea id="textarea_feedbackchoicegenerator" name="textarea_feedbackchoicegenerator" rows="20" cols="100" readonly >
 {{textareacontent}}
-</textarea>     
+        </textarea>
+
+</div> 

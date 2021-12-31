@@ -27,8 +27,8 @@ $db = $DB;
 $feedbackchoicegeneratorinstance = new FeedbackChoiceGenerator($db, $courseid, $page, $output);
 
 global $CFG;
-$isactive = true;
-// $isactive = $CFG->local_feedbackchoicegenerator_isactive;
+
+$isactive = $CFG->local_feedbackchoicegenerator_isactive;
 if ($isactive) {
     $feedbackchoicegeneratorinstance->init();
 } else {

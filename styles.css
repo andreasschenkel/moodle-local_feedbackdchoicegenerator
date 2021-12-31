@@ -1,3 +1,14 @@
-.feedbackchoicegenerator h3 {
+#feedbackchoicegenerator {
+    background-color: rgb(223, 242, 247);
     padding: 10px;
+}
+
+#feedbackchoicegenerator h3 {
+    padding: 10px;
+    background-color: rgb(35, 65, 163);
+    color: #fff;
+}
+
+#feedbackchoicegenerator .row {
+    margin-left: 0px;
 }

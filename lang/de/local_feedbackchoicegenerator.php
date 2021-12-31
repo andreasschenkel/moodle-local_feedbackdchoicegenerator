@@ -45,15 +45,17 @@ $string['header3'] = '1. Wahl und 2. Wahl';
 $string['summary'] = 'Ein Generator für die Aktivität Feedback, um eine 1. und 2. Wahl umzusetzen.';
 
 $string['courseidlabel'] = 'Kursid';
+$string['backtocourselabel'] = 'zurück zum Kurs';
 $string['sizelabel'] = 'Anzahl der Optionen';
 
-$string['optionsheader'] = 'Eingabebereich der Optionen:';
+$string['optionslengthinfo'] = 'max. Zeichenanzahl je Option:';
 
-$string['description'] = 'Den hier erzeugten xml-Code mit Hilfe des Download-Buttons herunterladen (rechte Maustaste nutzen und Speichern unter wählen). 
+$string['description'] = 'Den hier erzeugten xml-Code mit Hilfe des Download-Links herunterladen (rechte Maustaste "Ziel speichern unter..." nutzen). 
     Alternativ den xml-Code in einer Textdatei kopieren und mit der Endung .xml speichern.';
 
-$string['buttonlabel'] = 'XML erzeugen oder aktualisieren';
-$string['downloadbuttonlabel'] = 'Download (rechte Maustaste speichern und unter)';
+$string['buttonlabel'] = 'XML erzeugen';
+$string['updatebuttonlabel'] = 'aktualisieren';
+$string['downloadbuttonlabel'] = 'XML-Download (rechte Maustaste "Ziel speichern unter...")';
 $string['resetbuttonlabel'] = 'Eingaben zurücksetzen';
 
 $string['selectlabel'] = 'auswählen';
