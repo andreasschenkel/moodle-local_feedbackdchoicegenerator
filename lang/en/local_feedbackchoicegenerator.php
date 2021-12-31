@@ -45,14 +45,16 @@ $string['header3'] = '1. choice and 2. choice';
 $string['summary'] = 'Generating import-file for activity feedback';
 
 $string['courseidlabel'] = 'course id';
+$string['backtocourselabel'] = 'Back to the course';
 $string['sizelabel'] = 'How many options';
 
-$string['optionsheader'] = 'Enter options';
+$string['optionslengthinfo'] = 'Max. inputlength for each option:';
 
-$string['description'] = 'Download the generated code or put the generated xml-Code in to a textfile with the extension .xml.';
+$string['description'] = 'Download the generated code "Save link as ..." or put the generated xml-Code in to a textfile with the extension .xml.';
 
-$string['buttonlabel'] = 'generate XML or update';
-$string['downloadbuttonlabel'] = 'download with right click and save';
+$string['buttonlabel'] = 'generate XML';
+$string['updatebuttonlabel'] = 'update';
+$string['downloadbuttonlabel'] = 'download with right click and "save link as..."';
 $string['resetbuttonlabel'] = 'reset';
 
 $string['selectlabel'] = 'select';
