@@ -89,8 +89,6 @@ class FeedbackChoiceGenerator
             $size = 3;
         }
 
-
-
         if ($size > $maxlength) {
             $size = $maxlength;
         }
@@ -125,6 +123,8 @@ class FeedbackChoiceGenerator
             'local_feedbackchoicegenerator/mainpage',
             [
                 'courseid' => $this->courseid,
+                'backtocourselabel' => get_string('backtocourselabel', 'local_feedbackchoicegenerator'),
+                
                 'title' => $this->get_page()->get_title(),
                 'header3' => get_string('header3', 'local_feedbackchoicegenerator'),
                 'summary' => get_string('summary', 'local_feedbackchoicegenerator'),
@@ -133,7 +133,7 @@ class FeedbackChoiceGenerator
                 'sizelabel' => get_string('sizelabel', 'local_feedbackchoicegenerator'),
                 'maxlength' => $maxlength,
 
-                'optionsheader' => get_string('optionsheader', 'local_feedbackchoicegenerator'),
+                'optionslengthinfo' => get_string('optionslengthinfo', 'local_feedbackchoicegenerator'),
                 'description' => get_string('description', 'local_feedbackchoicegenerator'),
 
                 'size' => $size,
@@ -143,6 +143,7 @@ class FeedbackChoiceGenerator
                 'textareacontent' => $textareacontent,
                 'buttonlabel' => get_string('buttonlabel', 'local_feedbackchoicegenerator'),
                 'downloadbuttonlabel' => get_string('downloadbuttonlabel', 'local_feedbackchoicegenerator'),
+                'updatebuttonlabel' => get_string('updatebuttonlabel', 'local_feedbackchoicegenerator'),
                 'resetbuttonlabel' => get_string('resetbuttonlabel', 'local_feedbackchoicegenerator'),
                 'dataurl' => $dataurl
             ]
