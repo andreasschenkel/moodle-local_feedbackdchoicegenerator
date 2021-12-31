@@ -25,32 +25,36 @@ defined('MOODLE_INTERNAL') || die;
  */
 function local_feedbackchoicegenerator_extend_navigation_course($navigation, $course, $context) {
     global $CFG;
-    $page = $GLOBALS['PAGE'];
-    $url = new moodle_url('/local/feedbackchoicegenerator/index.php', array('id' => $course->id));
+    $isactive = false;
+    $isactive = $CFG->local_feedbackchoicegenerator_isactive;
+    if ($isactive) {
+        $page = $GLOBALS['PAGE'];
+        $url = new moodle_url('/local/feedbackchoicegenerator/index.php', array('id' => $course->id));
 
-    $feedbackchoicegeneratornode = $page->navigation->find($course->id, navigation_node::TYPE_COURSE);
+        $feedbackchoicegeneratornode = $page->navigation->find($course->id, navigation_node::TYPE_COURSE);
 
-    $collection = $feedbackchoicegeneratornode->children;
+        $collection = $feedbackchoicegeneratornode->children;
 
-    foreach ($collection->getIterator() as $child) {
-        $key = $child->key;
-        // position of node before this note
-        if ($key === 'participants') {
-            break;
+        foreach ($collection->getIterator() as $child) {
+            $key = $child->key;
+            // position of node before this note
+            if ($key === 'participants') {
+                break;
+            }
         }
-    }
 
-        $node = $feedbackchoicegeneratornode->create(get_string('pluginname', 'local_feedbackchoicegenerator'),
-            $url, navigation_node::NODETYPE_LEAF, null, 'feedbackchoicegenerator',  new pix_icon('i/report', 'grades'));
-        $feedbackchoicegeneratornode->add_node($node,  $key);
-   
-        $navigation->add(
-            get_string('pluginname', 'local_feedbackchoicegenerator'),
-            $url,
-            navigation_node::TYPE_SETTING,
-            null,
-            null,
-            new pix_icon('i/report', '')
-        );
+            $node = $feedbackchoicegeneratornode->create(get_string('pluginname', 'local_feedbackchoicegenerator'),
+                $url, navigation_node::NODETYPE_LEAF, null, 'feedbackchoicegenerator',  new pix_icon('i/report', 'grades'));
+            $feedbackchoicegeneratornode->add_node($node,  $key);
+    
+            $navigation->add(
+                get_string('pluginname', 'local_feedbackchoicegenerator'),
+                $url,
+                navigation_node::TYPE_SETTING,
+                null,
+                null,
+                new pix_icon('i/report', '')
+            );
+    }
     
 }
