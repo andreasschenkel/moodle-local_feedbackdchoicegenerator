@@ -28,4 +28,4 @@ $plugin->maturity = MATURITY_BETA;
 $plugin->version  = 2021123100;
 $plugin->component = 'local_feedbackchoicegenerator';
 $plugin->requires = 2017111300;
-$plugin->release = 'v2.0.1';
+$plugin->release = 'v2.0.2';
