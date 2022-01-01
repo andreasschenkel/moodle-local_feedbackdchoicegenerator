@@ -32,6 +32,10 @@ $string['feedbackchoicegenerator:view'] = 'see 1.2-choice feedback-generator';
 $string['isactive'] = 'Activate generator';
 $string['configisactive'] = 'When activate the generator can be started in the coursenavigation.';
 
+$string['isallowedonfrontpage'] = 'Allow generator on frontpage with coursid=1';
+$string['configisallowedonfrontpage'] = 'When activate the generator can be used on frontpage with courseid=1. 
+        URL ist: moodleurl/local/feedbackchoicegenerator/index.php?id=1';
+
 $string['maxoptionslength'] = 'maximum text length of an option';
 $string['configmaxoptionslength'] = 'Up to this length a user can enter text as an option.';
 

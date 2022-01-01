@@ -37,6 +37,13 @@ if ($ADMIN->fulltree) {
         0
     ));
 
+    $settings->add(new admin_setting_configcheckbox(
+        'local_feedbackchoicegenerator_isallowedonfrontpage',
+        get_string('isallowedonfrontpage', 'local_feedbackchoicegenerator'),
+        get_string('configisallowedonfrontpage', 'local_feedbackchoicegenerator'),
+        0
+    ));
+
     $options = array(5 => '5', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 100 => '100', 200 => '200');
 
     $settings->add(new admin_setting_configselect(

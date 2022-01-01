@@ -58,6 +58,11 @@ By default only editing teacher can use this generator. If other roles should be
 
 ### D: Changelog ###
 
+[[v2.0.3]]
+
+- setting to allow generator on frontpage with courseid=1. Use URL moodleurl/local/feedbackchoicegenerator/index.php?id=1'
+
+
 [[v2.0.2]]
 
 - 31.12.2021 css and layout improvements, add link back to the course, bug with activating generator in settings-page of the plugin
