@@ -15,6 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 require_once(__DIR__ . '/../../config.php');
 require_login();
+
 use local_feedbackchoicegenerator\View\FeedbackChoiceGenerator;
 
 // Assign global variables to local (parameter) variables.
@@ -28,9 +29,19 @@ $feedbackchoicegeneratorinstance = new FeedbackChoiceGenerator($db, $courseid, $
 
 global $CFG;
 
+$isallowedonfrontpage = $CFG->local_feedbackchoicegenerator_isallowedonfrontpage;
 $isactive = $CFG->local_feedbackchoicegenerator_isactive;
+
 if ($isactive) {
-    $feedbackchoicegeneratorinstance->init();
+    if ($courseid === (int)'1') {
+        if ($isallowedonfrontpage) {
+            $feedbackchoicegeneratorinstance->init();
+        } else {
+            echo "not supported on frontpage";
+        }
+    } else {
+        $feedbackchoicegeneratorinstance->init();
+    }
 } else {
     echo "is not activ";
 }

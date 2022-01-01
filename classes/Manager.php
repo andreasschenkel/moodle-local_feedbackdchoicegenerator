@@ -23,6 +23,7 @@ use local_feedbackchoicegenerator\Security\Security;
 defined('MOODLE_INTERNAL') || die();
 
 /**
+ * @package    local_feedbackchoicegenerator
  * Class manager
  */
 class Manager

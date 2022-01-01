@@ -19,6 +19,7 @@ defined('MOODLE_INTERNAL') || die;
 use moodle_database;
 
 /**
+ * @package    local_feedbackchoicegenerator
  * This is a straightfoward implementation of the Factory Pattern. The
  * class provides access to objects that are necessary for interaction
  * with the Moodle database via a DataFiles abstraction.

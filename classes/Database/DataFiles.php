@@ -19,6 +19,7 @@ defined('MOODLE_INTERNAL') || die();
 use moodle_database;
 
 /**
+ * @package    local_feedbackchoicegenerator
  * This class provides high-level functionality for the module. Concepts like
  * enumerating files belonging to a specific component are mapped to the
  * relevant SQL queries, therefore encapsulating low-level database access inside

@@ -23,6 +23,7 @@ use local_feedbackchoicegenerator\Helper;
 use local_feedbackchoicegenerator\Manager;
 
 /**
+ * @package    local_feedbackchoicegenerator
  * Class FeedbackChoiceGenerator
  */
 class FeedbackChoiceGenerator
