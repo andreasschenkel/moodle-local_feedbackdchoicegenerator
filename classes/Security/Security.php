@@ -24,6 +24,7 @@ use require_login_exception;
 use stdClass;
 
 /**
+ * @package    local_feedbackchoicegenerator
  * Class Security
  */
 class Security

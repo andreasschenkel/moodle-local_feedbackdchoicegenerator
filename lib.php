@@ -19,6 +19,7 @@ defined('MOODLE_INTERNAL') || die;
 /**
  * This function extends the navigation with the report items
  *
+ * @package    local_feedbackchoicegenerator
  * @param navigation_node $navigation The navigation node to extend
  * @param stdClass $course The course to object for the generator
  * @param stdClass $context The context of the course
