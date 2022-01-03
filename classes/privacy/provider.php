@@ -1,5 +1,4 @@
 <?php
-
 namespace  local_feedbackchoicegenerator\privacy;
 
 class provider implements
