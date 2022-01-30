@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_feedbackchoicegenerator;
+namespace local_feedbackrankedchoicegenerator;
 defined('MOODLE_INTERNAL') || die;
 use html_writer;
 
@@ -111,12 +111,12 @@ class Helper
             $itemnumber,
             $firstchoicereferencenumber,
             $alloptionstoadd, $option) {
-        $selectlabel = get_string('selectlabel', 'local_feedbackchoicegenerator');
+        $selectlabel = get_string('selectlabel', 'local_feedbackrankedchoicegenerator');
         if ($level === 1) {
-            $choicelabel = get_string('firstchoicelabel', 'local_feedbackchoicegenerator');
+            $choicelabel = get_string('firstchoicelabel', 'local_feedbackrankedchoicegenerator');
             $firstchoicereferencenumber = 0;
         } else {
-            $choicelabel = get_string('secondchoicelabel', 'local_feedbackchoicegenerator');;
+            $choicelabel = get_string('secondchoicelabel', 'local_feedbackrankedchoicegenerator');;
         }
         $output = "";
         $output = $output . html_writer::start_tag('ITEM', array('TYPE' => 'multichoice', 'REQUIRED' => '0')) . "\n";
@@ -145,7 +145,7 @@ class Helper
         $output = $output . html_writer::tag('ITEMTEXT', "<![CDATA[]]>") . "\n";
         $output = $output . html_writer::tag('ITEMLABEL', "<![CDATA[]]>") . "\n";
         $output = $output . html_writer::tag('PRESENTATION',
-            "<![CDATA[$option " . get_string('firstchoicelabel', 'local_feedbackchoicegenerator') . "]]>") . "\n";
+            "<![CDATA[$option " . get_string('firstchoicelabel', 'local_feedbackrankedchoicegenerator') . "]]>") . "\n";
         $output = $output . html_writer::tag('OPTIONS', "<![CDATA[]]>") . "\n";
         $output = $output . html_writer::tag('DEPENDITEM', "<![CDATA[$firstchoicereferencenumber]]>") . "\n";
         $output = $output . html_writer::tag('DEPENDVALUE', "<![CDATA[$option]]>") . "\n";

@@ -14,19 +14,19 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_feedbackchoicegenerator\View;
+namespace local_feedbackrankedchoicegenerator\View;
 
 use stdClass;
 use moodle_database;
 
-use local_feedbackchoicegenerator\Helper;
-use local_feedbackchoicegenerator\Manager;
+use local_feedbackrankedchoicegenerator\Helper;
+use local_feedbackrankedchoicegenerator\Manager;
 
 /**
- * @package    local_feedbackchoicegenerator
- * Class FeedbackChoiceGenerator
+ * @package    local_feedbackrankedchoicegenerator
+ * Class FeedbackrankedChoiceGenerator
  */
-class FeedbackChoiceGenerator
+class FeedbackrankedChoiceGenerator
 {
 
     /**
@@ -46,7 +46,7 @@ class FeedbackChoiceGenerator
     private $apim;
 
     /**
-     * FeedbackChoiceGenerator constructor.
+     * FeedbackrankedChoiceGenerator constructor.
      * @param moodle_database $db
      * @param int $courseid
      * @param moodle_page $page
@@ -77,8 +77,8 @@ class FeedbackChoiceGenerator
      */
     public function init() {
         global $CFG;
-        $maxlength = (int)$CFG->local_feedbackchoicegenerator_maxlength;
-        $maxoptionslength = (int)$CFG->local_feedbackchoicegenerator_maxoptionslength;
+        $maxlength = (int)$CFG->local_feedbackrankedchoicegenerator_maxlength;
+        $maxoptionslength = (int)$CFG->local_feedbackrankedchoicegenerator_maxoptionslength;
 
         $this->apim->security()->user_is_allowed_to_view_the_course_and_has_capability_to_use_generator($this->courseid);
 
@@ -120,32 +120,35 @@ class FeedbackChoiceGenerator
         $textareacontent = $this->textareagenerator($optionsarray);
         $dataurl = 'data:application/xml;charset=UTF-8;utf8,' . $textareacontent;
 
+        $wwwroot = $CFG->wwwroot;
+
         echo $this->get_page()->get_output()->render_from_template(
-            'local_feedbackchoicegenerator/mainpage',
+            'local_feedbackrankedchoicegenerator/mainpage',
             [
+                'wwwroot' => $wwwroot,
                 'courseid' => $this->courseid,
-                'backtocourselabel' => get_string('backtocourselabel', 'local_feedbackchoicegenerator'),
+                'backtocourselabel' => get_string('backtocourselabel', 'local_feedbackrankedchoicegenerator'),
                 
                 'title' => $this->get_page()->get_title(),
-                'header3' => get_string('header3', 'local_feedbackchoicegenerator'),
-                'summary' => get_string('summary', 'local_feedbackchoicegenerator'),
+                'header3' => get_string('header3', 'local_feedbackrankedchoicegenerator'),
+                'summary' => get_string('summary', 'local_feedbackrankedchoicegenerator'),
 
-                'courseidlabel' => get_string('courseidlabel', 'local_feedbackchoicegenerator'),
-                'sizelabel' => get_string('sizelabel', 'local_feedbackchoicegenerator'),
+                'courseidlabel' => get_string('courseidlabel', 'local_feedbackrankedchoicegenerator'),
+                'sizelabel' => get_string('sizelabel', 'local_feedbackrankedchoicegenerator'),
                 'maxlength' => $maxlength,
 
-                'optionslengthinfo' => get_string('optionslengthinfo', 'local_feedbackchoicegenerator'),
-                'description' => get_string('description', 'local_feedbackchoicegenerator'),
+                'optionslengthinfo' => get_string('optionslengthinfo', 'local_feedbackrankedchoicegenerator'),
+                'description' => get_string('description', 'local_feedbackrankedchoicegenerator'),
 
                 'size' => $size,
                 'filename' => $filename,
                 'options' => $options,
                 'maxoptionslength' => $maxoptionslength,
                 'textareacontent' => $textareacontent,
-                'buttonlabel' => get_string('buttonlabel', 'local_feedbackchoicegenerator'),
-                'downloadbuttonlabel' => get_string('downloadbuttonlabel', 'local_feedbackchoicegenerator'),
-                'updatebuttonlabel' => get_string('updatebuttonlabel', 'local_feedbackchoicegenerator'),
-                'resetbuttonlabel' => get_string('resetbuttonlabel', 'local_feedbackchoicegenerator'),
+                'buttonlabel' => get_string('buttonlabel', 'local_feedbackrankedchoicegenerator'),
+                'downloadbuttonlabel' => get_string('downloadbuttonlabel', 'local_feedbackrankedchoicegenerator'),
+                'updatebuttonlabel' => get_string('updatebuttonlabel', 'local_feedbackrankedchoicegenerator'),
+                'resetbuttonlabel' => get_string('resetbuttonlabel', 'local_feedbackrankedchoicegenerator'),
                 'dataurl' => $dataurl
             ]
         );

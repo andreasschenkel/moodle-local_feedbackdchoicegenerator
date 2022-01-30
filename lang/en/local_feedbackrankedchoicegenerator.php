@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     local_feedbackchoicegenerator
+ * @package     local_feedbackrankedchoicegenerator
  * @category    string
  * @copyright   Andreas Schenkel
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,16 +25,16 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = '1./2. choise-generator for feedback';
+$string['pluginname'] = '1./2. ranked-choise-generator for feedback';
 
-$string['feedbackchoicegenerator:view'] = 'see 1.2-choice feedback-generator';
+$string['feedbackrankedchoicegenerator:view'] = 'see 1./2-ranked-choice-generator for feedback';
 
 $string['isactive'] = 'Activate generator';
 $string['configisactive'] = 'When activate the generator can be started in the coursenavigation.';
 
 $string['isallowedonfrontpage'] = 'Allow generator on frontpage with coursid=1';
 $string['configisallowedonfrontpage'] = 'When activate the generator can be used on frontpage with courseid=1. 
-        URL ist: moodleurl/local/feedbackchoicegenerator/index.php?id=1';
+        URL ist: moodleurl/local/feedbackrankedchoicegenerator/index.php?id=1';
 
 $string['maxoptionslength'] = 'maximum text length of an option';
 $string['configmaxoptionslength'] = 'Up to this length a user can enter text as an option.';

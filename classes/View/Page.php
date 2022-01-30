@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_feedbackchoicegenerator\View;
+namespace local_feedbackrankedchoicegenerator\View;
 defined('MOODLE_INTERNAL') || die;
 use moodle_url;
 
@@ -35,9 +35,9 @@ class Page
         $this->page = $page;
         $this->output = $output;
         $this->course = $course;
-        $this->title = get_string('pluginname', 'local_feedbackchoicegenerator');
+        $this->title = get_string('pluginname', 'local_feedbackrankedchoicegenerator');
 
-        $page->set_url(new moodle_url('/local/feedbackchoicegenerator/index.php', ['id' => $courseid]));
+        $page->set_url(new moodle_url('/local/feedbackrankedchoicegenerator/index.php', ['id' => $courseid]));
         $page->set_title($this->get_title());
         $page->set_heading($course->fullname);
         $page->set_pagelayout('incourse');
