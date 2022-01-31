@@ -62,3 +62,4 @@ $string['downloadbuttonlabel'] = 'download with right click and "save link as...
 $string['resetbuttonlabel'] = 'reset';
 
 $string['selectlabel'] = 'select';
+$string['optionlabel'] = 'Option';

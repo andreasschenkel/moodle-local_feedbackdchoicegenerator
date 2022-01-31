@@ -79,6 +79,8 @@ class FeedbackrankedChoiceGenerator
         global $CFG;
         $maxlength = (int)$CFG->local_feedbackrankedchoicegenerator_maxlength;
         $maxoptionslength = (int)$CFG->local_feedbackrankedchoicegenerator_maxoptionslength;
+        $optionlabel = '';
+        $optionlabel = get_string('optionlabel', 'local_feedbackrankedchoicegenerator');
 
         $this->apim->security()->user_is_allowed_to_view_the_course_and_has_capability_to_use_generator($this->courseid);
 
@@ -110,7 +112,7 @@ class FeedbackrankedChoiceGenerator
             $optioncounter = substr($optioncounter , 0, $maxoptionslength);
             $options[] = array(
                 'optionnumber' => $i,
-                'optionlabel' => "Option $i",
+                'optionlabel' => "$optionlabel $i",
                 'optionname' => "option$i",
                 'optionvalue' => $optioncounter
             );

@@ -63,3 +63,4 @@ $string['downloadbuttonlabel'] = 'XML-Download (rechte Maustaste "Ziel speichern
 $string['resetbuttonlabel'] = 'Eingaben zurücksetzen';
 
 $string['selectlabel'] = 'auswählen';
+$string['optionlabel'] = 'Option';
