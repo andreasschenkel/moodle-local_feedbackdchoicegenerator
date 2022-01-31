@@ -62,8 +62,9 @@ By default only editing teacher can use this generator. If other roles should be
 
 - fixed: add "ranked" to pluginname and refactored to new name feedbackcankedchoicegenerator
 - fixed: Wrong link URL if Moodle not installed in the server root. 
-
-- still todo: namespace
+- fixed: wrong namespaces
+- fixed: pull request with correct language strings
+- fixed: do not hard-code the word "Option"
 
 
 

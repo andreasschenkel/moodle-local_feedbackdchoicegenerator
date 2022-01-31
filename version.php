@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->maturity = MATURITY_BETA;
-$plugin->version  = 2022013000;
+$plugin->version  = 2022013100;
 $plugin->component = 'local_feedbackrankedchoicegenerator';
 $plugin->requires = 2017111300;
 $plugin->release = 'v2.0.4';
