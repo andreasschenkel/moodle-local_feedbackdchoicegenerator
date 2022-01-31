@@ -1,10 +1,10 @@
 {{!
-    @template local_feedbackchoicegenerator/mainpage
+    @template local_feedbackrankedchoicegenerator/mainpage
 }}
 
 <?php session_start(); ?>
-<a href="/course/view.php?id={{courseid}}">{{backtocourselabel}}</a>
-<div id='feedbackchoicegenerator'>
+<a href="{{wwwroot}}/course/view.php?id={{courseid}}">{{backtocourselabel}}</a>
+<div id='feedbackrankedchoicegenerator'>
     <h3>{{header3}}</h3>
         <div class="summary">
             {{summary}}
@@ -23,7 +23,7 @@
             <div class="col">
                 {{sizelabel}} (max. {{maxlength}}):&nbsp;
                 <input name='size' type='number' value='{{size}}' max='{{maxlength}}' size='5'> 
-                <button id='update_feedbackchoicegenerator' class='btn btn-primary' type='submit'>{{updatebuttonlabel}}</button>
+                <button id='update_feedbackrankedchoicegenerator' class='btn btn-primary' type='submit'>{{updatebuttonlabel}}</button>
             </div>
         </div>
 
@@ -36,10 +36,10 @@
         </div>
         <div class="row mb-2">
             <div class="col">
-                <button id='input_feedbackchoicegenerator' class='btn btn-primary' type='submit'>{{buttonlabel}}</button>
+                <button id='input_feedbackrankedchoicegenerator' class='btn btn-primary' type='submit'>{{buttonlabel}}</button>
    
                 <a class='btn btn-danger' href='index.php?id={{courseid}}'>{{resetbuttonlabel}}</a><br>
-                <a class='download_feedbackchoicegenerator' href='{{dataurl}}' type='application/xml'>{{downloadbuttonlabel}}</a>
+                <a class='download_feedbackrankedchoicegenerator' href='{{dataurl}}' type='application/xml'>{{downloadbuttonlabel}}</a>
             </div> 
         </div> 
 
@@ -49,7 +49,7 @@
             {{description}}
         </div> 
 
-        <textarea id="textarea_feedbackchoicegenerator" name="textarea_feedbackchoicegenerator" rows="20" cols="100" readonly >
+        <textarea id="textarea_feedbackrankedchoicegenerator" name="textarea_feedbackrankedchoicegenerator" rows="20" cols="100" readonly >
 {{textareacontent}}
         </textarea>
 

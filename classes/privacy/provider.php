@@ -1,6 +1,5 @@
 <?php
-
-namespace  local_feedbackchoicegenerator\privacy;
+namespace  local_feedbackrankedchoicegenerator\privacy;
 
 class provider implements
     // This plugin does not store any personal user data.

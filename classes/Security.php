@@ -14,7 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_feedbackchoicegenerator\Security;
+namespace local_feedbackrankedchoicegenerator;
+
 defined('MOODLE_INTERNAL') || die;
 use coding_exception;
 use context_course;
@@ -24,7 +25,7 @@ use require_login_exception;
 use stdClass;
 
 /**
- * @package    local_feedbackchoicegenerator
+ * @package    local_feedbackrankedchoicegenerator
  * Class Security
  */
 class Security
@@ -55,6 +56,6 @@ class Security
         require_login($course);
 
         $coursecontext = context_course::instance($courseid);
-        require_capability('local/feedbackchoicegenerator:view', $coursecontext);
+        require_capability('local/feedbackrankedchoicegenerator:view', $coursecontext);
     }
 }

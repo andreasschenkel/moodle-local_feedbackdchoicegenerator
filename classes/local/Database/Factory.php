@@ -14,12 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_feedbackchoicegenerator\Database;
+namespace local_feedbackrankedchoicegenerator\local\Database;
 defined('MOODLE_INTERNAL') || die;
 use moodle_database;
 
 /**
- * @package    local_feedbackchoicegenerator
+ * @package    local_feedbackrankedchoicegenerator
  * This is a straightfoward implementation of the Factory Pattern. The
  * class provides access to objects that are necessary for interaction
  * with the Moodle database via a DataFiles abstraction.

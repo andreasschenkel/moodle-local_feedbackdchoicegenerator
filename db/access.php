@@ -17,7 +17,7 @@
 /**
  * Plugin capabilities are defined here.
  *
- * @package     local_feedbackchoicegenerator
+ * @package     local_feedbackrankedchoicegenerator
  * @category    access
  * @copyright   Andreas Schenkel
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = [
-    'local/feedbackchoicegenerator:view' => [
+    'local/feedbackrankedchoicegenerator:view' => [
         'captype' => 'read',
         'contextlevel' => CONTEXT_COURSE,
         'archetypes' => [
