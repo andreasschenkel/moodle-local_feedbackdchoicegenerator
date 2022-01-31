@@ -17,8 +17,8 @@
 namespace local_feedbackrankedchoicegenerator;
 defined('MOODLE_INTERNAL') || die;
 use moodle_database;
-use local_feedbackrankedchoicegenerator\Database\Factory as DatabaseFactory;
-use local_feedbackrankedchoicegenerator\Security\Security;
+use local_feedbackrankedchoicegenerator\local\Database\Factory as DatabaseFactory;
+use local_feedbackrankedchoicegenerator\Security;
 
 defined('MOODLE_INTERNAL') || die();
 

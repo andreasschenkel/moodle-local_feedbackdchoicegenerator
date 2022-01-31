@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_feedbackrankedchoicegenerator\Database;
+namespace local_feedbackrankedchoicegenerator\local\Database;
 defined('MOODLE_INTERNAL') || die();
 use moodle_database;
 

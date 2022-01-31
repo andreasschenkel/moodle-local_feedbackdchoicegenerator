@@ -16,7 +16,7 @@
 require_once(__DIR__ . '/../../config.php');
 require_login();
 
-use local_feedbackrankedchoicegenerator\View\FeedbackChoiceGenerator;
+use local_feedbackrankedchoicegenerator\FeedbackRankedChoiceGenerator;
 
 // Assign global variables to local (parameter) variables.
 // At the moment, this approach is used for documentation purposes.
@@ -25,7 +25,7 @@ $page = $PAGE;
 $output = $OUTPUT;
 $db = $DB;
 
-$feedbackrankedchoicegeneratorinstance = new FeedbackChoiceGenerator($db, $courseid, $page, $output);
+$feedbackrankedchoicegeneratorinstance = new FeedbackRankedChoiceGenerator($db, $courseid, $page, $output);
 
 global $CFG;
 

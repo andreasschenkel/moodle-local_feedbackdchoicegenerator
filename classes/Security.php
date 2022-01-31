@@ -14,7 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_feedbackrankedchoicegenerator\Security;
+namespace local_feedbackrankedchoicegenerator;
+
 defined('MOODLE_INTERNAL') || die;
 use coding_exception;
 use context_course;
