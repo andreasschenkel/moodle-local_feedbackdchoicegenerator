@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     local_feedbackrankedchoicegenerator
+ * @package     local_feedbackchoicegenerator
  * @category    string
  * @copyright   Andreas Schenkel
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = '1./2. ranked-choise-generator for feedback';
 
-$string['feedbackrankedchoicegenerator:view'] = 'see 1./2-ranked-choice-generator for feedback';
+$string['feedbackchoicegenerator:view'] = 'see 1./2-ranked-choice-generator for feedback';
 
 $string['isactive'] = 'Activate generator';
 $string['configisactive'] = 'When activated, the generator can be started in the navigation drawer of the course.';

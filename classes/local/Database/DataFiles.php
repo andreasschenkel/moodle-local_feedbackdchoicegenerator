@@ -14,12 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_feedbackrankedchoicegenerator\local\Database;
+namespace local_feedbackchoicegenerator\local\Database;
 defined('MOODLE_INTERNAL') || die();
 use moodle_database;
 
 /**
- * @package    local_feedbackrankedchoicegenerator
+ * @package    local_feedbackchoicegenerator
  * This class provides high-level functionality for the module. Concepts like
  * enumerating files belonging to a specific component are mapped to the
  * relevant SQL queries, therefore encapsulating low-level database access inside

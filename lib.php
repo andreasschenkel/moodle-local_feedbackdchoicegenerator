@@ -19,22 +19,22 @@ defined('MOODLE_INTERNAL') || die;
 /**
  * This function extends the navigation with the report items
  *
- * @package    local_feedbackrankedchoicegenerator
+ * @package    local_feedbackchoicegenerator
  * @param navigation_node $navigation The navigation node to extend
  * @param stdClass $course The course to object for the generator
  * @param stdClass $context The context of the course
  */
-function local_feedbackrankedchoicegenerator_extend_navigation_course($navigation, $course, $context) {
+function local_feedbackchoicegenerator_extend_navigation_course($navigation, $course, $context) {
     global $CFG;
     $isactive = false;
-    $isactive = $CFG->local_feedbackrankedchoicegenerator_isactive;
+    $isactive = $CFG->local_feedbackchoicegenerator_isactive;
     if ($isactive) {
         $page = $GLOBALS['PAGE'];
-        $url = new moodle_url('/local/feedbackrankedchoicegenerator/index.php', array('id' => $course->id));
+        $url = new moodle_url('/local/feedbackchoicegenerator/index.php', array('id' => $course->id));
 
-        $feedbackrankedchoicegeneratornode = $page->navigation->find($course->id, navigation_node::TYPE_COURSE);
+        $feedbackchoicegeneratornode = $page->navigation->find($course->id, navigation_node::TYPE_COURSE);
 
-        $collection = $feedbackrankedchoicegeneratornode->children;
+        $collection = $feedbackchoicegeneratornode->children;
 
         foreach ($collection->getIterator() as $child) {
             $key = $child->key;
@@ -44,12 +44,12 @@ function local_feedbackrankedchoicegenerator_extend_navigation_course($navigatio
             }
         }
 
-            $node = $feedbackrankedchoicegeneratornode->create(get_string('pluginname', 'local_feedbackrankedchoicegenerator'),
-                $url, navigation_node::NODETYPE_LEAF, null, 'feedbackrankedchoicegenerator',  new pix_icon('i/report', 'grades'));
-            $feedbackrankedchoicegeneratornode->add_node($node,  $key);
+            $node = $feedbackchoicegeneratornode->create(get_string('pluginname', 'local_feedbackchoicegenerator'),
+                $url, navigation_node::NODETYPE_LEAF, null, 'feedbackchoicegenerator',  new pix_icon('i/report', 'grades'));
+            $feedbackchoicegeneratornode->add_node($node,  $key);
     
             $navigation->add(
-                get_string('pluginname', 'local_feedbackrankedchoicegenerator'),
+                get_string('pluginname', 'local_feedbackchoicegenerator'),
                 $url,
                 navigation_node::TYPE_SETTING,
                 null,

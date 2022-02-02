@@ -17,7 +17,7 @@
 /**
  * Version details.
  *
- * @package    local_feedbackrankedchoicegenerator
+ * @package    local_feedbackchoicegenerator
  * @copyright  2021 Andreas Schenkel
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->maturity = MATURITY_BETA;
-$plugin->version  = 2022013100;
-$plugin->component = 'local_feedbackrankedchoicegenerator';
+$plugin->version  = 2022020200;
+$plugin->component = 'local_feedbackchoicegenerator';
 $plugin->requires = 2017111300;
-$plugin->release = 'v2.0.4';
+$plugin->release = 'v2.0.5';

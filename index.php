@@ -16,7 +16,7 @@
 require_once(__DIR__ . '/../../config.php');
 require_login();
 
-use local_feedbackrankedchoicegenerator\FeedbackRankedChoiceGenerator;
+use local_feedbackchoicegenerator\FeedbackChoiceGenerator;
 
 // Assign global variables to local (parameter) variables.
 // At the moment, this approach is used for documentation purposes.
@@ -25,22 +25,22 @@ $page = $PAGE;
 $output = $OUTPUT;
 $db = $DB;
 
-$feedbackrankedchoicegeneratorinstance = new FeedbackRankedChoiceGenerator($db, $courseid, $page, $output);
+$feedbackchoicegeneratorinstance = new FeedbackChoiceGenerator($db, $courseid, $page, $output);
 
 global $CFG;
 
-$isallowedonfrontpage = $CFG->local_feedbackrankedchoicegenerator_isallowedonfrontpage;
-$isactive = $CFG->local_feedbackrankedchoicegenerator_isactive;
+$isallowedonfrontpage = $CFG->local_feedbackchoicegenerator_isallowedonfrontpage;
+$isactive = $CFG->local_feedbackchoicegenerator_isactive;
 
 if ($isactive) {
     if ($courseid === (int)'1') {
         if ($isallowedonfrontpage) {
-            $feedbackrankedchoicegeneratorinstance->init();
+            $feedbackchoicegeneratorinstance->init();
         } else {
             echo "not supported on frontpage";
         }
     } else {
-        $feedbackrankedchoicegeneratorinstance->init();
+        $feedbackchoicegeneratorinstance->init();
     }
 } else {
     echo "is not activ";
