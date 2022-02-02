@@ -1,4 +1,4 @@
-# 1. and 2. choice in feedback-generator #
+# 1. and 2. ranked choice in feedback-generator #
 
 A: How to use 
 
@@ -17,7 +17,9 @@ G: Installing manually
 
 ### A: How to use ###
 
-Plugin that helps to generate an xml-file to import into activity feedback to support first and second choise feedback.
+Plugin that helps to generate an xml-file to import into activity feedback to support ranked first and second choise with the activity feedback.
+
+You can generate the needed XML-file with the questions and then you can import this XML-file into the activity feedback.
 
 See this animated gif to find out, how to use this localplugin as an generator and how to use the generated code as questions in feedback activity in moodle.
 
