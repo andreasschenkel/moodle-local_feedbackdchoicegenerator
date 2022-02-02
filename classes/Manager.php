@@ -14,16 +14,16 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_feedbackrankedchoicegenerator;
+namespace local_feedbackchoicegenerator;
 defined('MOODLE_INTERNAL') || die;
 use moodle_database;
-use local_feedbackrankedchoicegenerator\local\Database\Factory as DatabaseFactory;
-use local_feedbackrankedchoicegenerator\Security;
+use local_feedbackchoicegenerator\local\Database\Factory as DatabaseFactory;
+use local_feedbackchoicegenerator\Security;
 
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * @package    local_feedbackrankedchoicegenerator
+ * @package    local_feedbackchoicegenerator
  * Class manager
  */
 class Manager

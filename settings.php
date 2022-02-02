@@ -15,14 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package    local_feedbackrankedchoicegenerator
+ * @package    local_feedbackchoicegenerator
  * @copyright   Andreas Schenkel
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$settings = new admin_settingpage( 'local_feedbackrankedchoicegenerator', 'Feedback ranked choice generator' );
+$settings = new admin_settingpage( 'local_feedbackchoicegenerator', 'Feedback  choice generator' );
 
 // Create 
 $ADMIN->add( 'localplugins', $settings );
@@ -31,34 +31,34 @@ $ADMIN->add( 'localplugins', $settings );
 if ($ADMIN->fulltree) {
 
     $settings->add(new admin_setting_configcheckbox(
-        'local_feedbackrankedchoicegenerator_isactive',
-        get_string('isactive', 'local_feedbackrankedchoicegenerator'),
-        get_string('configisactive', 'local_feedbackrankedchoicegenerator'),
+        'local_feedbackchoicegenerator_isactive',
+        get_string('isactive', 'local_feedbackchoicegenerator'),
+        get_string('configisactive', 'local_feedbackchoicegenerator'),
         0
     ));
 
     $settings->add(new admin_setting_configcheckbox(
-        'local_feedbackrankedchoicegenerator_isallowedonfrontpage',
-        get_string('isallowedonfrontpage', 'local_feedbackrankedchoicegenerator'),
-        get_string('configisallowedonfrontpage', 'local_feedbackrankedchoicegenerator'),
+        'local_feedbackchoicegenerator_isallowedonfrontpage',
+        get_string('isallowedonfrontpage', 'local_feedbackchoicegenerator'),
+        get_string('configisallowedonfrontpage', 'local_feedbackchoicegenerator'),
         0
     ));
 
     $options = array(5 => '5', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 100 => '100', 200 => '200');
 
     $settings->add(new admin_setting_configselect(
-        'local_feedbackrankedchoicegenerator_maxlength',
-        get_string('maxlength', 'local_feedbackrankedchoicegenerator'),
-        get_string('configmaxlength', 'local_feedbackrankedchoicegenerator'),
+        'local_feedbackchoicegenerator_maxlength',
+        get_string('maxlength', 'local_feedbackchoicegenerator'),
+        get_string('configmaxlength', 'local_feedbackchoicegenerator'),
         '40',
         $options
     ));
 
     $options = array(5 => '5', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50');
     $settings->add(new admin_setting_configselect(
-        'local_feedbackrankedchoicegenerator_maxoptionslength',
-        get_string('maxoptionslength', 'local_feedbackrankedchoicegenerator'),
-        get_string('configmaxoptionslength', 'local_feedbackrankedchoicegenerator'),
+        'local_feedbackchoicegenerator_maxoptionslength',
+        get_string('maxoptionslength', 'local_feedbackchoicegenerator'),
+        get_string('configmaxoptionslength', 'local_feedbackchoicegenerator'),
         '30',
         $options
     ));

@@ -1,4 +1,4 @@
-# 1. and 2. choice in feedback-generator #
+# 1. and 2. ranked choice in feedback-generator #
 
 A: How to use 
 
@@ -17,7 +17,9 @@ G: Installing manually
 
 ### A: How to use ###
 
-Plugin that helps to generate an xml-file to import into activity feedback to support first and second choise feedback.
+Plugin that helps to generate an xml-file to import into activity feedback to support ranked first and second choise with the activity feedback.
+
+You can generate the needed XML-file with the questions and then you can import this XML-file into the activity feedback.
 
 See this animated gif to find out, how to use this localplugin as an generator and how to use the generated code as questions in feedback activity in moodle.
 
@@ -58,6 +60,11 @@ By default only editing teacher can use this generator. If other roles should be
 
 ### D: Changelog ###
 
+[[v2.0.5]]
+
+- fixed: delete "ranked" from pluginname and refactored to previous name feedbackchoicegenerator
+
+
 [[v2.0.4]]
 
 - fixed: add "ranked" to pluginname and refactored to new name feedbackcankedchoicegenerator
@@ -70,7 +77,7 @@ By default only editing teacher can use this generator. If other roles should be
 
 [[v2.0.3]]
 
-- setting to allow generator on frontpage with courseid=1. Use URL moodleurl/local/feedbackrankedchoicegenerator/index.php?id=1'
+- setting to allow generator on frontpage with courseid=1. Use URL moodleurl/local/feedbackchoicegenerator/index.php?id=1'
 
 
 [[v2.0.2]]
@@ -107,7 +114,7 @@ unknown
 - 02.12.2021 set capability für role editingteacher instead of teacher
 - 02.12.2021 check, if user has capability to view report also by checking the capapility
 - 02.12.2021 do not prevent capability for student
-- 02.12.2021 added missing languagestring feedbackrankedchoicegenerator:view
+- 02.12.2021 added missing languagestring feedbackchoicegenerator:view
 
 
 [[v1.0.1]] beta
@@ -131,7 +138,7 @@ unknown
 
 The plugin can be also installed by putting the contents of this directory to
 
-    {your/moodle/dirroot}/local/feedbackrankedchoicegenerator
+    {your/moodle/dirroot}/local/feedbackchoicegenerator
 
 Afterwards, log in to your Moodle site as an admin and go to _Site administration >
 Notifications_ to complete the installation.
