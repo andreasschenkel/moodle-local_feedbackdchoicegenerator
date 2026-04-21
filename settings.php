@@ -24,12 +24,11 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$settings = new admin_settingpage( 'local_feedbackchoicegenerator', 'Feedback  choice generator' );
+$settings = new admin_settingpage('local_feedbackchoicegenerator', 'Feedback  choice generator');
 
-$ADMIN->add( 'localplugins', $settings );
+$ADMIN->add('localplugins', $settings);
 
 if ($ADMIN->fulltree) {
-
     $settings->add(new admin_setting_configcheckbox(
         'local_feedbackchoicegenerator_isactive',
         get_string('isactive', 'local_feedbackchoicegenerator'),
@@ -62,5 +61,4 @@ if ($ADMIN->fulltree) {
         '30',
         $options
     ));
-
 }

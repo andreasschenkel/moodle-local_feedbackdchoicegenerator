@@ -106,5 +106,4 @@ class DataFiles {
     public function get_course($courseid): mixed {
         return $this->get_database()->get_record('course', ['id' => $courseid], '*', MUST_EXIST);
     }
-
 }

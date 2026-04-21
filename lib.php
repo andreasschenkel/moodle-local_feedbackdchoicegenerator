@@ -50,8 +50,14 @@ function local_feedbackchoicegenerator_extend_navigation_course($navigation, $co
             }
         }
 
-        $node = $feedbackchoicegeneratornode->create(get_string('pluginname', 'local_feedbackchoicegenerator'),
-            $url, navigation_node::NODETYPE_LEAF, null, 'feedbackchoicegenerator', new pix_icon('i/report', 'grades'));
+        $node = $feedbackchoicegeneratornode->create(
+            get_string('pluginname', 'local_feedbackchoicegenerator'),
+            $url,
+            navigation_node::NODETYPE_LEAF,
+            null,
+            'feedbackchoicegenerator',
+            new pix_icon('i/report', 'grades')
+        );
         $feedbackchoicegeneratornode->add_node($node, $key);
 
         $navigation->add(
@@ -63,5 +69,4 @@ function local_feedbackchoicegenerator_extend_navigation_course($navigation, $co
             new pix_icon('i/report', '')
         );
     }
-
 }

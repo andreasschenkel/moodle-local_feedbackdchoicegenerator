@@ -18,7 +18,6 @@ namespace local_feedbackchoicegenerator;
 
 use stdClass;
 use moodle_database;
-
 use local_feedbackchoicegenerator\Helper;
 use local_feedbackchoicegenerator\Manager;
 
@@ -29,8 +28,8 @@ use local_feedbackchoicegenerator\Manager;
  * @copyright  2021 Andreas Schenkel
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class FeedbackChoiceGenerator {
-
+class FeedbackChoiceGenerator
+{
     /**
      * @var moodle_page
      */
@@ -157,7 +156,8 @@ class FeedbackChoiceGenerator {
                 'dataurl' => $dataurl,
             ];
 
-        $html = "<?php session_start(); ?>" . $this->get_page()->get_output()->render_from_template(
+        $html = "<?php session_start(); ?>" .
+            $this->get_page()->get_output()->render_from_template(
                 'local_feedbackchoicegenerator/mainpage',
                 $datatorender
             );
@@ -190,7 +190,8 @@ class FeedbackChoiceGenerator {
         $level = 1;
         // ToDo: $option has to be set -> use of pattern SOLID.
         $option = '';
-        $textareacontent = $textareacontent . $helper->generate_selection_overview(
+        $textareacontent = $textareacontent .
+            $helper->generate_selection_overview(
                 $level,
                 ++$itemnumber,
                 $itemnumberfirstchoice,
@@ -208,7 +209,8 @@ class FeedbackChoiceGenerator {
             $selectedoption = $option;
             // Second selectionoverview is level = 2.
             $level = 2;
-            $textareacontent = $textareacontent . $helper->generate_selection_overview(
+            $textareacontent = $textareacontent .
+                $helper->generate_selection_overview(
                     $level,
                     ++$itemnumber,
                     $itemnumberfirstchoice,

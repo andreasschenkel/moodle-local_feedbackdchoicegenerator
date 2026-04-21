@@ -60,6 +60,13 @@ By default only editing teacher can use this generator. If other roles should be
 
 ### D: Changelog ###
 
+
+
+[[502]]  
+
+- implement version for moodle 500, 501, 502
+
+
 [[v405.2.0.6]]
 
 - implement version for moodle 4.5

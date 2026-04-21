@@ -24,12 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version  = 2024110300;
-$plugin->requires = 2022112800;
-$plugin->supported = [
-    401,
-    405,
-];
-$plugin->component = 'local_feedbackchoicegenerator';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = 'v405.2.0.6';
+$plugin->version  = 2026042100;
+$plugin->component = 'local_feedbackchoicegenerator';
+$plugin->requires = 2025061100; // Moodle 500.
+$plugin->supported = [500, 502];
+$plugin->release = 'v5.0.2';

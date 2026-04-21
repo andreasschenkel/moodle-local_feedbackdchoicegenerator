@@ -64,7 +64,6 @@ class Page {
         $page->set_title($this->get_title());
         $page->set_heading($course->fullname);
         $page->set_pagelayout('incourse');
-
     }
 
     /**
@@ -112,5 +111,4 @@ class Page {
     protected function get_page() {
         return $this->page;
     }
-
 }

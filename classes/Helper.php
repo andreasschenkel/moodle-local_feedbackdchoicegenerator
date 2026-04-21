@@ -58,9 +58,17 @@ class Helper {
      */
     public static function generate_document_header_openinglines(): string {
         $output = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
-        $output = $output . html_writer::start_tag('FEEDBACK',
-                ['VERSION' => '200701', 'COMMENT' => 'XML-Importfile for mod/feedback']) . "\n";
+
+        $output = $output . html_writer::start_tag(
+            'FEEDBACK',
+            [
+                'VERSION' => '200701',
+                'COMMENT' => 'XML-Importfile for mod/feedback',
+            ]
+        ) . "\n";
+
         $output = $output . html_writer::start_tag('ITEMS') . "\n";
+
         return $output;
     }
 
@@ -120,16 +128,19 @@ class Helper {
      * @param string $alloptionstoadd
      * @param string $option DEPENDVALUE
      */
-    public static function generate_selection_overview($level,
-                                                       $itemnumber,
-                                                       $firstchoicereferencenumber,
-                                                       $alloptionstoadd, $option): string {
+    public static function generate_selection_overview(
+        $level,
+        $itemnumber,
+        $firstchoicereferencenumber,
+        $alloptionstoadd,
+        $option
+    ): string {
         $selectlabel = get_string('selectlabel', 'local_feedbackchoicegenerator');
         if ($level === 1) {
             $choicelabel = get_string('firstchoicelabel', 'local_feedbackchoicegenerator');
             $firstchoicereferencenumber = 0;
         } else {
-            $choicelabel = get_string('secondchoicelabel', 'local_feedbackchoicegenerator');;
+            $choicelabel = get_string('secondchoicelabel', 'local_feedbackchoicegenerator');
         }
         $output = "";
         $output = $output . html_writer::start_tag('ITEM', ['TYPE' => 'multichoice', 'REQUIRED' => '0']) . "\n";
@@ -159,8 +170,10 @@ class Helper {
         $output = $output . html_writer::tag('ITEMID', "<![CDATA[$itemnumber]]>") . "\n";
         $output = $output . html_writer::tag('ITEMTEXT', "<![CDATA[]]>") . "\n";
         $output = $output . html_writer::tag('ITEMLABEL', "<![CDATA[]]>") . "\n";
-        $output = $output . html_writer::tag('PRESENTATION',
-                "<![CDATA[$option " . get_string('firstchoicelabel', 'local_feedbackchoicegenerator') . "]]>") . "\n";
+        $output = $output . html_writer::tag(
+            'PRESENTATION',
+            "<![CDATA[$option " . get_string('firstchoicelabel', 'local_feedbackchoicegenerator') . "]]>"
+        ) . "\n";
         $output = $output . html_writer::tag('OPTIONS', "<![CDATA[]]>") . "\n";
         $output = $output . html_writer::tag('DEPENDITEM', "<![CDATA[$firstchoicereferencenumber]]>") . "\n";
         $output = $output . html_writer::tag('DEPENDVALUE', "<![CDATA[$option]]>") . "\n";
